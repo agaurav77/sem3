@@ -1,0 +1,352 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+BT3021: Biological Science
+\end_layout
+
+\begin_layout Author
+Ashish Gaurav
+\end_layout
+
+\begin_layout Chapter
+Life
+\end_layout
+
+\begin_layout Section
+Properties and Definition of Life
+\end_layout
+
+\begin_layout Standard
+Living organisms differ from non living objects in the following particular
+ properties:
+\end_layout
+
+\begin_layout Enumerate
+Living organisms are 
+\series bold
+morphous
+\series default
+, i.e.
+ they have definite shape, size and structure.
+\end_layout
+
+\begin_layout Enumerate
+They have definite organisation.
+\end_layout
+
+\begin_layout Enumerate
+They always have cellular nature, so they are either unicellular or multicellula
+r.
+\end_layout
+
+\begin_layout Enumerate
+They show coordination between different parts of what maintains a 
+\series bold
+homeostasis 
+\series default
+(a constant temperature range inside the body).
+\end_layout
+
+\begin_layout Enumerate
+They can ability to move and perform locomotion.
+\end_layout
+
+\begin_layout Enumerate
+They show metabolic functions.
+\end_layout
+
+\begin_layout Enumerate
+They have the ability of internal growth.
+\end_layout
+
+\begin_layout Enumerate
+They have the ability to excrete.
+\end_layout
+
+\begin_layout Enumerate
+They have specific glands for useful secretions eg.
+ mammary glands etc.
+\end_layout
+
+\begin_layout Enumerate
+These have specific receptors to recieve external and internal stimuli eg.
+ muscle and glands to give specific response.
+\end_layout
+
+\begin_layout Enumerate
+They have regulatory mechanisms eg.
+ nervous and hormonal mechanisms (animals) and only hormonal mechanisms
+ (plants) to maintain homeostasis inside the body.
+\end_layout
+
+\begin_layout Enumerate
+They show adaptations to their environment to increase their chances of
+ survival.
+\end_layout
+
+\begin_layout Enumerate
+They show variations which help in 
+\series bold
+speciation
+\series default
+ and 
+\series bold
+evolution
+\series default
+.
+\end_layout
+
+\begin_layout Enumerate
+They have reproductive powers for continuing their race.
+\end_layout
+
+\begin_layout Enumerate
+They have a definite lifespan (i.e.
+ the period from life till death)
+\end_layout
+
+\begin_layout Enumerate
+They undergo aging after adulthood and then die a natural death.
+\end_layout
+
+\begin_layout Standard
+So, in the light of these properties of living organisms, life can be defined
+ as
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Life 
+\series default
+is a unique, complex organisation of molecules, expressing itself through
+ chemical reactions which lead to growth, development, responsiveness, adaptatio
+n and reproduction.
+\end_layout
+
+\begin_layout Standard
+(Although I wouldn't say life is completely defined yet.)
+\end_layout
+
+\begin_layout Section
+Division of Life
+\end_layout
+
+\begin_layout Standard
+Revision of groups includes classification of a group of species, naming
+ them and finally understanding their evolutionary relationships.
+\end_layout
+
+\begin_layout Subsection
+Species
+\end_layout
+
+\begin_layout Standard
+Species include a group of individuals which resemble closely in structure
+ as well as functions.
+ Ordinarily species cannot breed freely with other species.
+ (There are exceptions however!) The lowest category of living organisms
+ is species.
+\end_layout
+
+\begin_layout Subsection
+Genera
+\end_layout
+
+\begin_layout Standard
+Genus (plural 
+\emph on
+genera
+\emph default
+) forms a taxonomical category higher than species.
+ It is a group of closely related species eg.
+ dogs, jackals and wolves are in the same genus, because they are closely
+ related to each other but belong to different species.
+ Similarly, potato, brinjal etc.
+ are placed in the same genus 
+\series bold
+solanum
+\series default
+ but belong to different species 
+\series bold
+tuberosum
+\series default
+ and 
+\series bold
+melongena 
+\series default
+respectively.
+\end_layout
+
+\begin_layout Standard
+The common characteristics of species in a genus are called 
+\series bold
+correlated characteristics
+\series default
+.
+ Sometimes, a genus may be made up of only one species as in humans.
+ (of course, if you remember that humans are called 
+\emph on
+homo sapiens
+\emph default
+, it's worthwhile to inform you that our genus is 
+\emph on
+homo
+\emph default
+)
+\end_layout
+
+\begin_layout Subsection
+Family
+\end_layout
+
+\begin_layout Standard
+A number of genera having several common characteristics form a family eg.
+ 
+\series bold
+solanum 
+\series default
+and 
+\series bold
+datura
+\series default
+ have some common characteristics, so they are placed in the family 
+\series bold
+solanaceae
+\series default
+.
+ The genus 
+\series bold
+vulpus
+\series default
+ shows few common characteristics with 
+\series bold
+canis
+\series default
+.
+ Thus, both of these genera are placed in the same family 
+\series bold
+canidae
+\series default
+.
+\end_layout
+
+\begin_layout Subsection
+Order
+\end_layout
+
+\begin_layout Standard
+A number of families having common characteristics are placed in an order.
+ Cats, tigers etc.
+ belong to a family 
+\series bold
+falidae
+\series default
+.
+ Bears are included in 
+\series bold
+ursidae
+\series default
+.
+ Because cats, tigers, bears are carnivores, their families are included
+ in the order 
+\series bold
+carnivora
+\series default
+.
+\end_layout
+
+\begin_layout Subsection
+Class
+\end_layout
+
+\begin_layout Standard
+The class is a basic category.
+ Similar orders are placed in the same class.
+ 
+\series bold
+Mammalia
+\series default
+ includes orders like 
+\series bold
+carnivora
+\series default
+, 
+\series bold
+chiroptera
+\series default
+, 
+\series bold
+rodentia
+\series default
+, and 
+\series bold
+primates
+\series default
+.
+ There are a few characteristics in common eg.
+ the presence of mammary glands and hair.
+\end_layout
+
+\end_body
+\end_document
