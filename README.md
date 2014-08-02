@@ -25,7 +25,7 @@ Yeah, that is kinda possible. Thinking and typing, you could go wrong with gramm
 What can I do with your work?
 -----------------------------
 <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type"><b>bitworks</b></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://twitter.com/agaurav77" property="cc:attributionName" rel="cc:attributionURL">Ashish Gaurav</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />This work is at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/agaurav77/bitworks" rel="dct:source">https://github.com/agaurav77/bitworks</a>.
-<p>According to the website <a href="www.creativecommons.org">, Attribution-NonCommercial-ShareAlike CC BY-NC-SA lets others remix, tweak, and build upon your work non-commercially, as long as they credit you and license their new creations under the identical terms.</a></p>
+<p>According to the website <a href="www.creativecommons.org">Creative Commons</a>, Attribution-NonCommercial-ShareAlike CC BY-NC-SA lets others remix, tweak, and build upon your work non-commercially, as long as they credit you and license their new creations under the identical terms.</p>
 
 Further
 -------
