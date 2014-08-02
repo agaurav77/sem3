@@ -8,7 +8,7 @@ Yeah, you guessed it right. Most of my college uses notes already written by stu
 The content is in them. Download LyX (LyX is a WYMIWYG editor for LaTeX) and open the files. Then the content is all yours! For convenience, however, I'll give pdf files soon.
 
 <h3>Does your college not have issues with you sharing the material online?</h3>
-Skim over the web, and you'll find notes written by people during their college life, and that too for free. My content just resembles the course names (and those have not been compromised with in any way), so I don't see why anyone else has the right to stop me. I'm just putting my notes into electronic format, that's it, so that people can benefit from it.
+Skim over the web, and you'll find notes written by people during their college life, and that too for free. My content just resembles the course names (and those have not been compromised with in any way), so I don't see why anyone has the right to stop me from expressing myself (after all, most of everybody's notes are available for free on DC). I'm just putting my notes into electronic format, that's it, so that people can benefit from it.
 
 <h3>If I'm at your college, should I study from these notes only?</h3>
 No, absolutely not. Every course has some prescribed text books, and those are the things that help throughout. These notes are just an online version of my notes and things I've understood. It is in no way, complete, or intended to replace the actual course material which you get by going to the class. This is just for reference, or maybe revision. I'm just a student yet, and I still have a lot to learn.
