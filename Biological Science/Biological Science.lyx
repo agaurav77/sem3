@@ -86,8 +86,17 @@ Living organisms are
 \series bold
 morphous
 \series default
-, i.e.
- they have definite shape, size and structure.
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+having definite shape, size and structure
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -102,9 +111,19 @@ r.
 \begin_layout Enumerate
 They show coordination between different parts of what maintains a 
 \series bold
-homeostasis 
+homeostasis
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+a constant temperature range inside the body
+\end_layout
+
+\end_inset
+
+
 \series default
-(a constant temperature range inside the body).
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -346,6 +365,372 @@ primates
 .
  There are a few characteristics in common eg.
  the presence of mammary glands and hair.
+\end_layout
+
+\begin_layout Subsection
+Phylum
+\end_layout
+
+\begin_layout Standard
+Many classes with similar characteristics are included in the same phylum.
+ Phylum 
+\series bold
+chordata
+\series default
+ includes 
+\series bold
+pisces
+\series default
+, 
+\series bold
+amphibia
+\series default
+, and 
+\series bold
+mammalia
+\series default
+, because all of them have common characteristics such as the presence of
+ notochord, dorsal hollow nervous system and pharynx perforated by gill
+ slits.
+\end_layout
+
+\begin_layout Subsection
+Kingdom
+\end_layout
+
+\begin_layout Standard
+It is the highest category of taxonomic study of living organisms.
+ All animals are included in the kingdom 
+\series bold
+animalia
+\series default
+ and all plants are included in the kingdom 
+\series bold
+plantae
+\series default
+.
+\end_layout
+
+\begin_layout Section
+Whittaker's Five Kingdom System
+\end_layout
+
+\begin_layout Standard
+This system of classification by Robert Whittaker
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+[W] Robert H.
+ Whittaker (December 27, 1920–October 20, 1980) was an eminent American
+ plant ecologist, active in the 1950s to the 1970s.
+ He proposed the five-kingdom taxonomic classification of the world's living
+ organisms into the Animalia, Plantae, Fungi, Protista, and Monera in 1969.
+ He also proposed the hittaker Biome Classification.
+\end_layout
+
+\end_inset
+
+ replaced the old two kingdom system.
+ It is based on the following criteria
+\end_layout
+
+\begin_layout Itemize
+complexity of organism's body
+\end_layout
+
+\begin_layout Itemize
+complexity of structure
+\end_layout
+
+\begin_layout Itemize
+mode of obtaining nutrition
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+phylogenic
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+evolutionary history of any group of organisms
+\end_layout
+
+\end_inset
+
+ 
+\series default
+relationship
+\end_layout
+
+\begin_layout Subsection*
+What are these five kingdoms?
+\end_layout
+
+\begin_layout Standard
+These five kingdoms are
+\end_layout
+
+\begin_layout Enumerate
+Monera
+\end_layout
+
+\begin_layout Enumerate
+Protista
+\end_layout
+
+\begin_layout Enumerate
+Fungi
+\end_layout
+
+\begin_layout Enumerate
+Plantae
+\end_layout
+
+\begin_layout Enumerate
+Animalia
+\end_layout
+
+\begin_layout Standard
+In this classification, the subdivisions of the old two kingdom
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Earlier the living organisms were divided into two basic kingdoms, i.e.
+ the plant and animal kingdoms.
+\end_layout
+
+\end_inset
+
+ classification have not been changed, and this particular arrangement depicts
+ the phylogeny of various living organisms better.
+\end_layout
+
+\begin_layout Subsection
+Monera
+\end_layout
+
+\begin_layout Enumerate
+These are 
+\series bold
+prokaryotes
+\series default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+[W] The prokaryotes are a group of organisms whose cells lack a membrane-bound
+ nucleus (karyon).
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+They lack nuclear membrane.
+\end_layout
+
+\begin_layout Enumerate
+They are devoid of 
+\series bold
+plastids
+\series default
+, 
+\series bold
+mitochondria
+\series default
+ and advanced 
+\series bold
+flagella
+\series default
+.
+\end_layout
+
+\begin_layout Enumerate
+They are typically unicellular organisms (but one group is 
+\series bold
+mycelial
+\series default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+kind of like the vegetative part of fungi
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+The predominant mode of nutrition is absorptive but some groups are photosynthet
+ic or chemosynthetic
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+producing energy from chemical reactions
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Reproduction is primarily asexual by body fission.
+\end_layout
+
+\begin_layout Enumerate
+Protosexual phenomenon also occurs.
+\end_layout
+
+\begin_layout Enumerate
+Organisms are not motile
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+they move by beating of simple flagella
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Monera cells are microscopic.
+\end_layout
+
+\begin_layout Enumerate
+Most organisms bear a cell wall.
+\end_layout
+
+\begin_layout Subsection
+Protista
+\end_layout
+
+\begin_layout Subsection
+Fungi
+\end_layout
+
+\begin_layout Enumerate
+They are eukaryotic
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+[W] A eukaryote is any organism whose cells contain a nucleus and other
+ structures (organelles) enclosed within membranes.
+\end_layout
+
+\end_inset
+
+, multicellular organisms with heterotrophic nutrition.
+\end_layout
+
+\begin_layout Enumerate
+They lack chlorophyll.
+\end_layout
+
+\begin_layout Enumerate
+There is either limited on no differentiation of somatic
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+[W] A somatic cell is any biological cell forming the body of an organism;
+ that is, in a multicellular organism, any cell other than a gamete, germ
+ cell, gametocyte or undifferentiated stem cell.
+\end_layout
+
+\end_inset
+
+ tissue cells.
+\end_layout
+
+\begin_layout Enumerate
+Usually non motile, but show protoplasmic flow in mycelium.
+\end_layout
+
+\begin_layout Enumerate
+Both sexual and asexual methods of reproduction are present.
+\end_layout
+
+\begin_layout Subsection
+Plantae
+\end_layout
+
+\begin_layout Enumerate
+Multicellular organisms with walled eukaryotic cells, which generally have
+ vacuoles.
+\end_layout
+
+\begin_layout Enumerate
+They contain chlorophyll in plastids, responsible for photosynthesis.
+\end_layout
+
+\begin_layout Enumerate
+Principal mode of nutrition is photosynthesis.
+\end_layout
+
+\begin_layout Enumerate
+Primarily they are non motile, living anchored to a substrate.
+\end_layout
+
+\begin_layout Enumerate
+There is structural differentiation leading towards organs of photosynthesis,
+ anchorage and support.
+ Even advanced development leads to specialized photosynthetic, vascular
+ and covering tissues.
+\end_layout
+
+\begin_layout Enumerate
+Reproduction is generally, sexual.
+\end_layout
+
+\begin_layout Subsection
+Animalia
+\end_layout
+
+\begin_layout Enumerate
+They are multicellular organisms.
+ They bear eukaryotic cells and lack stiff cell walls.
+\end_layout
+
+\begin_layout Enumerate
+They are devoid of plastids and photosynthetic pigments.
+\end_layout
+
+\begin_layout Enumerate
+Nutrition is primarily ingestive and digestion of food occurs in an internal
+ cavity called 
+\series bold
+stomach
+\series default
+.
+ However, some of these organisms show absorptive nutrition, lacking an
+ internal cavity.
+\end_layout
+
+\begin_layout Enumerate
+Level of organisation and tissue differentiation is advanced and complex
+ than other kingdoms.
+ These organisms have evolved neuro-motor and sensory systems and their
+ motility is based on contractile fibrils.
+\end_layout
+
+\begin_layout Enumerate
+They have developed cells which can contract or transmit impulses.
 \end_layout
 
 \end_body
