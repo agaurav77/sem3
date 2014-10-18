@@ -5,6 +5,7 @@
 \textclass book
 \begin_preamble
 \date{}
+\usepackage{circuitikz}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -75,7 +76,7 @@ status open
 
 \begin_layout Plain Layout
 
-  
+
 \backslash
 renewcommand{
 \backslash
@@ -225,7 +226,309 @@ breadboard, DC power supply, IC 7486 (1), connecting wires
 \end_layout
 
 \begin_layout Section*
+Circuit Diagram
+\end_layout
+
+\begin_layout Standard
+Here is the circuit diagram, with the pin numbers corresponding to the inputs
+ and outputs, as mentioned on IC 7486.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{circuitikz}[scale=1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+s{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+xorwidth{0.28} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw 
+\end_layout
+
+\begin_layout Plain Layout
+
+(0,0) node[xor port][scale=
+\backslash
+s] (xor1){} 
+\end_layout
+
+\begin_layout Plain Layout
+
+(0,4*
+\backslash
+s) node[xor port][scale=
+\backslash
+s] (xor2){} 
+\end_layout
+
+\begin_layout Plain Layout
+
+(2*
+\backslash
+s,2*
+\backslash
+s) node[xor port][scale=
+\backslash
+s] (xor3){} 
+\end_layout
+
+\begin_layout Plain Layout
+
+(5*
+\backslash
+s,2*
+\backslash
+s-
+\backslash
+s*
+\backslash
+xorwidth) node[xor port][scale=
+\backslash
+s] (xor4){} 
+\end_layout
+
+\begin_layout Plain Layout
+
+(xor1.out) -| (xor3.in 2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+(xor2.out) -| (xor3.in 1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+(xor3.out) --(3*
+\backslash
+s,2*
+\backslash
+s) -| (xor4.in 1); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1*
+\backslash
+s] at (xor1.in 1) {5}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1*
+\backslash
+s] at (xor1.in 2) {4}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[yshift=7*
+\backslash
+s] at (xor1.out) {6};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1*
+\backslash
+s] at (xor2.in 1) {1}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1*
+\backslash
+s] at (xor2.in 2) {2}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[yshift=7*
+\backslash
+s] at (xor2.out) {3};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1*
+\backslash
+s] at (xor3.in 1) {9}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1*
+\backslash
+s] at (xor3.in 2) {10}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[yshift=7*
+\backslash
+s] at (xor3.out) {8};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1*
+\backslash
+s,yshift=7*
+\backslash
+s] at (xor4.in 1) {12}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1*
+\backslash
+s,yshift=-7*
+\backslash
+s] at (xor4.in 2) {13}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[yshift=7*
+\backslash
+s] at (xor4.out) {11};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw 
+\end_layout
+
+\begin_layout Plain Layout
+
+(xor4.in 2) -- (3*
+\backslash
+s, 2*
+\backslash
+s-2*
+\backslash
+s*
+\backslash
+xorwidth) -- (3*
+\backslash
+s,0) (xor4.out) -- (7*
+\backslash
+s, 2*
+\backslash
+s-
+\backslash
+xorwidth*
+\backslash
+s); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[yshift=-7*
+\backslash
+s] at (3*
+\backslash
+s,0) {$P_1$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[right=1*
+\backslash
+s] at (7*
+\backslash
+s, 2*
+\backslash
+s-
+\backslash
+xorwidth*
+\backslash
+s) {o/p}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{circuitikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
 Theory
+\end_layout
+
+\begin_layout Standard
+The XOR gate (sometimes written ExOR) is a gate which can have multiple
+ inputs.
+ The peculiarity is in its output.
+ The output is high if the number of high inputs is odd.
+ IC 7486 has four TTL logic XOR gates as shown in the figure below.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -265,10 +568,6 @@ target "http://commons.wikimedia.org/wiki/File:7486_Quad_2-input_ExOR_Gates.PNG"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
