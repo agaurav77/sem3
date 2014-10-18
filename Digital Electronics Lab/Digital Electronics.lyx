@@ -229,6 +229,46 @@ Theory
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/7486_Quad_2-input_ExOR_Gates.PNG
+	lyxscale 30
+	width 30page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+source : 
+\begin_inset CommandInset href
+LatexCommand href
+name "IC 7486"
+target "http://commons.wikimedia.org/wiki/File:7486_Quad_2-input_ExOR_Gates.PNG"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
