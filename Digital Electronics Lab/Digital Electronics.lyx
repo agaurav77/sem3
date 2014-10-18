@@ -2,7 +2,7 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass memoir
+\textclass book
 \begin_preamble
 \date{}
 \end_preamble
@@ -37,7 +37,7 @@ figs-within-sections
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
 \use_esint 1
 \use_mhchem 1
@@ -52,8 +52,8 @@ figs-within-sections
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 3
-\tocdepth 3
+\secnumdepth 2
+\tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language english
@@ -68,6 +68,24 @@ figs-within-sections
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+  
+\backslash
+renewcommand{
+\backslash
+chaptername}{Experiment}
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Title
 EC 4102 : Digital Electronics Lab
@@ -184,6 +202,30 @@ to read 8 specified address location of a programmed IC Intel 2716
 
 \begin_layout Enumerate
 to store a nibble in an IC 2114 RAM and to read it 
+\end_layout
+
+\begin_layout Chapter
+design and realization of a parity bit checker using IC 7486
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design and realization of a parity bit checker using IC 7486
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DC power supply, IC 7486 (1), connecting wires
+\end_layout
+
+\begin_layout Section*
+Theory
 \end_layout
 
 \begin_layout Standard
