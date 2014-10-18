@@ -1,0 +1,194 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass memoir
+\begin_preamble
+\date{}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+EC 4102 : Digital Electronics Lab
+\end_layout
+
+\begin_layout Author
+Ashish Gaurav
+\end_layout
+
+\begin_layout Section
+Compulsory Experiments
+\end_layout
+
+\begin_layout Enumerate
+design and realization of a parity bit checker using IC 7486 
+\end_layout
+
+\begin_layout Enumerate
+design and realization of a 4:2 line encoder using IC 7432 
+\end_layout
+
+\begin_layout Enumerate
+design and realization of a 4-bit magnitude comparator using IC 7485 
+\end_layout
+
+\begin_layout Enumerate
+assembling of a seven segment decoder using IC 7447 and IC 7404 
+\end_layout
+
+\begin_layout Enumerate
+design and testing of SR and JK Flip-flop using IC 7400 and IC 7402 
+\end_layout
+
+\begin_layout Enumerate
+design of a 2 bit binary parallel adder using IC CD 4030 and IC CD 4081
+ 
+\end_layout
+
+\begin_layout Enumerate
+design of an astable multivibrator (using IC 555 timer) and to observe the
+ output waveforms
+\end_layout
+
+\begin_layout Enumerate
+design of an monostable multivibrator (using IC 555 timer) and to observe
+ the output waveforms 
+\end_layout
+
+\begin_layout Enumerate
+design and testing of a 2 : 1 multiplexer and CMOS switch using IC CD 4066
+ 
+\end_layout
+
+\begin_layout Enumerate
+design of a 4 bit serial in serial out shift register using IC CD 4027 and
+ 555 timer 
+\end_layout
+
+\begin_layout Enumerate
+design of a modulo-9 ripple counter using IC CD 4029 and IC CD 4091
+\end_layout
+
+\begin_layout Enumerate
+design of a Schmitt trigger circuit (using IC 741 OPAMP) and to observe
+ the output waveforms
+\end_layout
+
+\begin_layout Section
+Optional Experiments
+\end_layout
+
+\begin_layout Enumerate
+design and realization of 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+a binary to gray code converter using IC 7486
+\end_layout
+
+\begin_layout Enumerate
+a gray to binary code converter using IC 7486 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+design of an EX-OR gate using a minimum of 2 input NAND gates (IC 7400)
+ 
+\end_layout
+
+\begin_layout Enumerate
+design and realization of an odd parity generator using IC 7486
+\end_layout
+
+\begin_layout Enumerate
+design of a 1-bit half subtractor using IC CD 4066
+\end_layout
+
+\begin_layout Enumerate
+design and realization of a 4:16 decoder using 1:4 de-multiplexer
+\end_layout
+
+\begin_layout Enumerate
+design of a modulo-256 ripple counter using IC 7493 
+\end_layout
+
+\begin_layout Enumerate
+design of a 4 : 16 line decoder using IC CD 4514
+\end_layout
+
+\begin_layout Enumerate
+to read 8 specified address location of a programmed IC Intel 2716 
+\end_layout
+
+\begin_layout Enumerate
+to store a nibble in an IC 2114 RAM and to read it 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
