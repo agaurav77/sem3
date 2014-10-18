@@ -1,5 +1,10 @@
 <h2>bitworks</h2>
-An open source collection of content written for my undergraduate course, starting from Semester 3. 
+An open source collection of content written for my undergraduate course, starting from Semester 3.
+
+<h3>Software Required (if you want to contribute)</h3>
+1. LyX
+2. texlive, or a similar LaTeX distribution
+3. circuitikz (LaTeX module) 
 
 <h3>Why this trouble? Did you not have your college content already in electronic format?</h3>
 Yeah, you guessed it right. Most of my college uses notes already written by students, i.e. photocopied over generations. Some fragments of the work reside in electronic pdf files, that have been created by teachers(so they don't look appealing). I have been experimenting with LaTeX since the second semester, and finally I have the courage to put my content online. By the way, my college is BIT Mesra.
