@@ -216,7 +216,7 @@ to store a nibble in an IC 2114 RAM and to read it
 \end_layout
 
 \begin_layout Chapter
-design and realization of a parity bit checker using IC 7486
+Parity Bit Checker
 \end_layout
 
 \begin_layout Section*
@@ -738,7 +738,7 @@ Components should be individually tested, beforehand.
 \end_layout
 
 \begin_layout Chapter
-design and realization of a 4:2 line encoder using IC 7432
+4:2 Line Encoder Circuit
 \end_layout
 
 \begin_layout Section*
@@ -911,7 +911,7 @@ Components should be individually tested, beforehand.
 \end_layout
 
 \begin_layout Chapter
-design and realization of a 4-bit magnitude comparator using IC 7485
+Magnitude Comparator Circuit
 \end_layout
 
 \begin_layout Section*
@@ -927,7 +927,872 @@ Apparatus Needed
 \end_layout
 
 \begin_layout Standard
-breadboard, DC power supply, IC 7486
+breadboard, DC power supply, IC 7485 (1), connecting wires
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Before switching on power supply, make sure that the connections are correct.
+\end_layout
+
+\begin_layout Enumerate
+Apply the input logic as per the truth table in terms of 
+\begin_inset Formula $+5$
+\end_inset
+
+V for state 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $0$
+\end_inset
+
+V for state 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Observe the output states.
+\end_layout
+
+\begin_layout Enumerate
+Verify the results of truthness.
+\end_layout
+
+\begin_layout Enumerate
+Repeat steps 
+\begin_inset Formula $3-5$
+\end_inset
+
+ for all input combinations.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+Seven Segment Decoder
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+assembling of a seven segment decoder using IC 7447 and IC 7404
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DC power supply, IC 7447 (1), IC 7404 (1), connecting wires,
+ seven segment display IC LT 543 (1)
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Before switching on power supply, make sure that the connections are correct.
+\end_layout
+
+\begin_layout Enumerate
+Apply the input logic as per the truth table in terms of 
+\begin_inset Formula $+5$
+\end_inset
+
+V for state 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $0$
+\end_inset
+
+V for state 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Observe the output states.
+\end_layout
+
+\begin_layout Enumerate
+Verify the displayed digit with decimal equivalent of applied input binary
+ code.
+\end_layout
+
+\begin_layout Enumerate
+Repeat steps 
+\begin_inset Formula $3-5$
+\end_inset
+
+ for all input combinations.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+SR and JK flip flops
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design and testing of SR and JK Flip-flop using IC 7400 and IC 7402
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DC power supply, IC 7400 (1), IC 7402 (1), connecting wires
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Before switching on power supply, make sure that the connections are correct.
+\end_layout
+
+\begin_layout Enumerate
+Apply the input logic as per the truth table in terms of 
+\begin_inset Formula $+5$
+\end_inset
+
+V for state 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $0$
+\end_inset
+
+V for state 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Observe the output states.
+\end_layout
+
+\begin_layout Enumerate
+Verify the displayed digit with decimal equivalent of applied input binary
+ code.
+\end_layout
+
+\begin_layout Enumerate
+Repeat steps 
+\begin_inset Formula $3-5$
+\end_inset
+
+ for all input combinations.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+Binary Adder Circuit
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design of a 2 bit binary parallel adder using IC CD 4030 and IC CD 4081
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, IC CD 4030 (1), IC CD 4081 (1), connecting wires
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the figure.
+\end_layout
+
+\begin_layout Enumerate
+For all input combinations, switch on the circuit and note the observations.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+Astable Multivibrator
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design of an astable multivibrator (using IC 555 timer) and to observe the
+ output waveforms
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DC power supply, cathode ray oscilloscope (CRO), IC 555 timer
+ (1), capacitors 
+\begin_inset Formula $0.1\mu$
+\end_inset
+
+F (1), capacitors 
+\begin_inset Formula $0.01\mu$
+\end_inset
+
+F (1), resistances 
+\begin_inset Formula $33k\Omega$
+\end_inset
+
+ (1), rheostat (1) (range in 
+\begin_inset Formula $k\Omega$
+\end_inset
+
+), connecting wires
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Before switching on the power supply, make sure the connections are correct.
+\end_layout
+
+\begin_layout Enumerate
+Connect the CRO probe to terminal 
+\begin_inset Formula $3$
+\end_inset
+
+, other probe to ground.
+\end_layout
+
+\begin_layout Enumerate
+Observe output waveforms for different values of 
+\begin_inset Formula $R_{B}$
+\end_inset
+
+ by varying the rheostat.
+\end_layout
+
+\begin_layout Enumerate
+Tabulate 
+\begin_inset Formula $W$
+\end_inset
+
+, 
+\begin_inset Formula $T$
+\end_inset
+
+ in the observation table.
+\end_layout
+
+\begin_layout Enumerate
+Calculate 
+\begin_inset Formula $D_{m}$
+\end_inset
+
+, 
+\begin_inset Formula $D_{t}$
+\end_inset
+
+ and error (
+\begin_inset Formula $\%$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+Plot the waveforms observed at terminals 
+\begin_inset Formula $2$
+\end_inset
+
+ and 
+\begin_inset Formula $3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+Monostable Multivibrator
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design of an monostable multivibrator (using IC 555 timer) and to observe
+ the output waveforms
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DC power supply, function generator or pulse generator (1),
+ cathode ray oscilloscope (1), IC 555 timer (1), capacitors 
+\begin_inset Formula $0.1\mu$
+\end_inset
+
+F (1), capacitors 
+\begin_inset Formula $0.01\mu$
+\end_inset
+
+F (1), rheostat (1) (range in 
+\begin_inset Formula $k\Omega$
+\end_inset
+
+), connecting wires
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Before switching on the power supply, make sure the connections are correct.
+\end_layout
+
+\begin_layout Enumerate
+Connect the CRO probe to terminal 
+\begin_inset Formula $3$
+\end_inset
+
+, other terminal to ground.
+\end_layout
+
+\begin_layout Enumerate
+Observe the output waveform by varying 
+\begin_inset Formula $R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Tabulate pulse width as 
+\begin_inset Formula $W_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Calculate 
+\begin_inset Formula $W_{t}$
+\end_inset
+
+ and error (
+\begin_inset Formula $\%$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+Plot the waveform observed at terminals 
+\begin_inset Formula $3$
+\end_inset
+
+ and 
+\begin_inset Formula $6$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+CMOS Logic
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design and testing of a 2 : 1 multiplexer and CMOS switch using IC CD 4066
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DC power supply, IC CD 4027 (1), IC CD 4066 (1), connecting
+ wires
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Before switching on the power supply, make sure all connections are correct.
+\end_layout
+
+\begin_layout Enumerate
+Observe 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $C$
+\end_inset
+
+ and 
+\begin_inset Formula $F$
+\end_inset
+
+ for the switch and complete the observation table.
+\end_layout
+
+\begin_layout Enumerate
+Observe 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $C$
+\end_inset
+
+ and 
+\begin_inset Formula $F$
+\end_inset
+
+ for the multiplexer and complete the observation table.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+12$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+Serial In Serial Out Shift Register
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design of a 4 bit serial in serial out shift register using IC CD 4027 and
+ 555 timer
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DCdesign of a modulo-9 ripple counter using IC CD 4029 and IC
+ CD 4091 power supply, IC CD 4027 (4), IC 555 timer (1), connecting wires
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Connect the clock to all IC CD 4027's.
+\end_layout
+
+\begin_layout Enumerate
+Observe the input and output signals and note the result.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+Modulo - 9 Ripple Counter
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design of a modulo-9 ripple counter using IC CD 4029 and IC CD 4091
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DC power supply, cathode ray oscilloscope (CRO), IC CD 4029
+ (1), IC CD 4091 (1), connecting wires
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Before switching on the power supply, make sure all connections are correct.
+\end_layout
+
+\begin_layout Enumerate
+Observe 
+\begin_inset Formula $Q_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $Q_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $Q_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $Q_{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Complete the observation table.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+Schmitt Trigger Circuit
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design of a Schmitt trigger circuit (using IC 741 OPAMP) and to observe
+ the output waveforms
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DC power supply, function generator (1), cathode ray oscilloscope
+ (CRO), IC 741 (1), resistors 
+\begin_inset Formula $8.2k\Omega$
+\end_inset
+
+ (1), resistors 
+\begin_inset Formula $100k\Omega$
+\end_inset
+
+ (1), connecting wires
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Before switching on power supply, make sure all connections are correct.
+\end_layout
+
+\begin_layout Enumerate
+Select sinusoidal input from function generator.
+\end_layout
+
+\begin_layout Enumerate
+Connect the CRO probe to terminal 
+\begin_inset Formula $2$
+\end_inset
+
+, other terminal to ground.
+\end_layout
+
+\begin_layout Enumerate
+Observe input waveform, plot the waveform observed at terminals 
+\begin_inset Formula $2$
+\end_inset
+
+ and 
+\begin_inset Formula $6$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Repeat steps 
+\begin_inset Formula $3-5$
+\end_inset
+
+ for triangular input.
+\end_layout
+
+\begin_layout Enumerate
+Calculate loop gain (
+\begin_inset Formula $-A\beta$
+\end_inset
+
+) for both observations.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
 \end_layout
 
 \end_body
