@@ -6,6 +6,12 @@
 \begin_preamble
 \date{}
 \usepackage{circuitikz}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usetikzlibrary{circuits.logic.US,circuits.logic.IEC}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -18,7 +24,7 @@ figs-within-sections
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
+\font_roman newcent
 \font_sans default
 \font_typewriter default
 \font_default_family default
@@ -53,6 +59,10 @@ figs-within-sections
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 10page%
+\topmargin 10page%
+\rightmargin 10page%
+\bottommargin 10page%
 \secnumdepth 2
 \tocdepth 2
 \paragraph_separation indent
@@ -230,15 +240,7 @@ Circuit Diagram
 \end_layout
 
 \begin_layout Standard
-Here is the circuit diagram, with the pin numbers corresponding to the inputs
- and outputs, as mentioned on IC 7486.
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\paragraph_spacing single
 \align center
 \begin_inset ERT
 status open
@@ -569,6 +571,363 @@ target "http://commons.wikimedia.org/wiki/File:7486_Quad_2-input_ExOR_Gates.PNG"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection*
+What is a parity bit?
+\end_layout
+
+\begin_layout Standard
+Parity refers to a the number of 
+\begin_inset Formula $1$
+\end_inset
+
+'s in some binary data as being odd or even.
+ So, 
+\begin_inset Formula $11100$
+\end_inset
+
+ has odd parity, whereas, 
+\begin_inset Formula $1001$
+\end_inset
+
+ has even parity.
+\end_layout
+
+\begin_layout Standard
+Parity bit is an idea to detect errors during the transmission of binary
+ data.
+ When we transmit some binary data, it contains a specific number of 
+\begin_inset Formula $1$
+\end_inset
+
+'s and 
+\begin_inset Formula $0$
+\end_inset
+
+'s.
+ We intentionally add an extra bit to the information, so that the number
+ of 
+\begin_inset Formula $1$
+\end_inset
+
+'s becomes either odd or even.
+ Let us denote the fact that original data had an even number of 
+\begin_inset Formula $1$
+\end_inset
+
+'s by 
+\begin_inset Formula $P_{1}$
+\end_inset
+
+.
+ So,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+P_{1}= & \begin{cases}
+1 & \mbox{if there are even number of \ensuremath{1}'s in the original data}\\
+0 & \mbox{otherwise}
+\end{cases}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After transmitting the data, we tell the reciever the parity of sent data
+ (somehow), and then he checks whether the received data has the same parity
+ as the sent data.
+ If not, then there must be some error introduced in the medium of transmission.
+\end_layout
+
+\begin_layout Standard
+The circuit that generates the extra parity bit given the initial data,
+ is called as 
+\series bold
+parity bit generator.
+
+\series default
+ And, the circuit that checks the parity of the received data is called
+ as a 
+\series bold
+parity bit checker
+\series default
+.
+\end_layout
+
+\begin_layout Subsection*
+I added the parity bit, how does the circuit check for it?
+\end_layout
+
+\begin_layout Standard
+Let's examine the circuit.
+ Suppose we sent the data (including the parity bit), as having an odd parity.
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Before switching on power supply, make sure that the connections are correct.
+\end_layout
+
+\begin_layout Enumerate
+Apply the input logic as per the truth table in terms of 
+\begin_inset Formula $+5$
+\end_inset
+
+V for state 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $0$
+\end_inset
+
+V for state 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Observe the output states.
+\end_layout
+
+\begin_layout Enumerate
+Verify the results of truthness.
+\end_layout
+
+\begin_layout Enumerate
+Repeat steps 
+\begin_inset Formula $3-5$
+\end_inset
+
+ for all input combinations.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+design and realization of a 4:2 line encoder using IC 7432
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design and realization of a 4:2 line encoder using IC 7432
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DC power supply, IC 7432 (1), connecting wires
+\end_layout
+
+\begin_layout Section*
+Circuit Diagram
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{circuitikz}  
+\backslash
+def
+\backslash
+orwidth{0.28} 
+\backslash
+draw (4,2) node[or port] (or1){} (4,4) node[or port] (or2){} (0,0) -- (1,0)
+ -- (1,4-
+\backslash
+orwidth) -- (or2.in 2) (or1.in 2) -| (1,2-
+\backslash
+orwidth) node[circ] {} (or1.in 1) -- (0,2+
+\backslash
+orwidth) (or1.out) -- (6,2) (or2.out) -- (6,4) (or2.in 1) -- (0,4+
+\backslash
+orwidth) (0,6+
+\backslash
+orwidth) -- (6,6+
+\backslash
+orwidth) ; 
+\backslash
+node[left=1] at (0,6+
+\backslash
+orwidth) {$D_0$}; 
+\backslash
+node[left=1] at (0,4+
+\backslash
+orwidth) {$D_1$}; 
+\backslash
+node[left=1] at (0,2+
+\backslash
+orwidth) {$D_2$}; 
+\backslash
+node[left=1] at (0,0) {$D_3$}; 
+\backslash
+node[right=1] at (6,6+
+\backslash
+orwidth) {not used}; 
+\backslash
+node[right=1] at (6,4) {$Y=D_1+D_3$}; 
+\backslash
+node[right=1] at (6,2) {$X=D_2+D_3$}; 
+\backslash
+node[yshift=8] at (or2.in 1) {1}; 
+\backslash
+node[yshift=-8] at (or2.in 2) {2}; 
+\backslash
+node[yshift=8] at (or2.out) {3}; 
+\backslash
+node[yshift=8] at (or1.in 1) {4}; 
+\backslash
+node[yshift=-8] at (or1.in 2) {5}; 
+\backslash
+node[yshift=8] at (or1.out) {6};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{circuitikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Procedure
+\end_layout
+
+\begin_layout Enumerate
+Connect the circuit as shown in the circuit diagram.
+\end_layout
+
+\begin_layout Enumerate
+Before switching on power supply, make sure that the connections are correct.
+\end_layout
+
+\begin_layout Enumerate
+Apply the input logic as per the truth table in terms of 
+\begin_inset Formula $+5$
+\end_inset
+
+V for state 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $0$
+\end_inset
+
+V for state 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Observe the output states.
+\end_layout
+
+\begin_layout Enumerate
+Verify the results of truthness.
+\end_layout
+
+\begin_layout Enumerate
+Repeat steps 
+\begin_inset Formula $3-5$
+\end_inset
+
+ for all input combinations.
+\end_layout
+
+\begin_layout Section*
+Precautions
+\end_layout
+
+\begin_layout Enumerate
+Power supply should not exceed 
+\begin_inset Formula $+5$
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Enumerate
+Connections should be tight.
+\end_layout
+
+\begin_layout Enumerate
+Components should be individually tested, beforehand.
+\end_layout
+
+\begin_layout Chapter
+design and realization of a 4-bit magnitude comparator using IC 7485
+\end_layout
+
+\begin_layout Section*
+Aim
+\end_layout
+
+\begin_layout Standard
+design and realization of a 4-bit magnitude comparator using IC 7485
+\end_layout
+
+\begin_layout Section*
+Apparatus Needed
+\end_layout
+
+\begin_layout Standard
+breadboard, DC power supply, IC 7486
 \end_layout
 
 \end_body
