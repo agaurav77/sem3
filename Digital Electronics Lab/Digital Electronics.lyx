@@ -1970,6 +1970,714 @@ end{circuitikz}
 \end_layout
 
 \begin_layout Section*
+Theory
+\end_layout
+
+\begin_layout Subsection*
+What is IC 7432?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/Ttl_inside_7432.svg
+	lyxscale 45
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Source : 
+\begin_inset CommandInset href
+LatexCommand href
+name "IC 7432"
+target "http://commons.wikimedia.org/wiki/File:Ttl_inside_7432.svg"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+IC 7432 is a TTL IC with four OR gates.
+ Terminal 
+\begin_inset Formula $7$
+\end_inset
+
+ serves as ground (low) whereas terminal 
+\begin_inset Formula $14$
+\end_inset
+
+ serves as 
+\begin_inset Formula $V_{cc}$
+\end_inset
+
+ or high.
+\end_layout
+
+\begin_layout Subsection*
+What is an encoder?
+\end_layout
+
+\begin_layout Standard
+An encoder is a digital function that assigns an input line a binary code.
+ So, suppose via the input lines we wish to send binary information, then,
+ an encoder will check which input lines are on, and produce a binary output
+ for that state of the inputs.
+ An encoder has 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ or less inputs and 
+\begin_inset Formula $n$
+\end_inset
+
+ outputs.
+ 
+\end_layout
+
+\begin_layout Standard
+For example, we have a setup that can be in 
+\begin_inset Formula $4$
+\end_inset
+
+ states separately.
+ If we wish to convey the same, we could send the information across 
+\begin_inset Formula $4$
+\end_inset
+
+ input lines (
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $C$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+) and say the setup is in which state (
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $C$
+\end_inset
+
+, 
+\begin_inset Formula $D$
+\end_inset
+
+).
+ However, we could also send the information as a binary number, i.e.
+ 
+\begin_inset Formula $00$
+\end_inset
+
+ for state 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $01$
+\end_inset
+
+ for state 
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $10$
+\end_inset
+
+ for state 
+\begin_inset Formula $C$
+\end_inset
+
+, 
+\begin_inset Formula $11$
+\end_inset
+
+ for state 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Exactly this function is done by an encoder, in this case, a 
+\begin_inset Formula $4:2$
+\end_inset
+
+ line encoder.
+\end_layout
+
+\begin_layout Subsection*
+Are there many types of encoders?
+\end_layout
+
+\begin_layout Standard
+Generally, there are two kinds of encoders.
+\end_layout
+
+\begin_layout Itemize
+Line encoder
+\end_layout
+
+\begin_layout Itemize
+Priority encoder
+\end_layout
+
+\begin_layout Standard
+A 
+\series bold
+line 
+\series default
+encoder produces a binary number for each state of the 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+inputs.
+ It is also called a 
+\series bold
+simple 
+\series default
+encoder.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But what if more than one inputs is on at a time? In that case, the outputs
+ are flawed.
+ Exactly why we need another kind of encoder.
+ Let us say that now, we will assign priorities to the bits.
+ So, if the most significant bit has the highest priority and priority decreases
+ on to the least significant bit, then the outputs can be described as
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Digital Logic and Computer Design, M.
+ Morris Mano, Page 175
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inputs
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Outputs
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $D_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $D_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $D_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $D_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This kind of encoder is called a 
+\series bold
+priority 
+\series default
+encoder.
+\end_layout
+
+\begin_layout Subsection*
+How does the circuit work?
+\end_layout
+
+\begin_layout Standard
+Lets see the circuit once again.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{circuitikz}  
+\backslash
+def
+\backslash
+orwidth{0.28} 
+\backslash
+draw (4,2) node[or port] (or1){} (4,4) node[or port] (or2){} (0,0) -- (1,0)
+ -- (1,4-
+\backslash
+orwidth) -- (or2.in 2) (or1.in 2) -| (1,2-
+\backslash
+orwidth) node[circ] {} (or1.in 1) -- (0,2+
+\backslash
+orwidth) (or1.out) -- (6,2) (or2.out) -- (6,4) (or2.in 1) -- (0,4+
+\backslash
+orwidth) (0,6+
+\backslash
+orwidth) -- (6,6+
+\backslash
+orwidth) ; 
+\backslash
+node[left=1] at (0,6+
+\backslash
+orwidth) {$D_0$}; 
+\backslash
+node[left=1] at (0,4+
+\backslash
+orwidth) {$D_1$}; 
+\backslash
+node[left=1] at (0,2+
+\backslash
+orwidth) {$D_2$}; 
+\backslash
+node[left=1] at (0,0) {$D_3$}; 
+\backslash
+node[right=1] at (6,6+
+\backslash
+orwidth) {not used}; 
+\backslash
+node[right=1] at (6,4) {$Y=D_1+D_3$}; 
+\backslash
+node[right=1] at (6,2) {$X=D_2+D_3$}; 
+\backslash
+node[yshift=8] at (or2.in 1) {1}; 
+\backslash
+node[yshift=-8] at (or2.in 2) {2}; 
+\backslash
+node[yshift=8] at (or2.out) {3}; 
+\backslash
+node[yshift=8] at (or1.in 1) {4}; 
+\backslash
+node[yshift=-8] at (or1.in 2) {5}; 
+\backslash
+node[yshift=8] at (or1.out) {6};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{circuitikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section*
 Procedure
 \end_layout
 
