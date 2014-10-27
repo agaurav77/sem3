@@ -3,6 +3,10 @@
 \begin_document
 \begin_header
 \textclass book
+\begin_preamble
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -71,6 +75,411 @@
 
 \begin_layout Title
 Design and Analysis of Computer Algorithms
+\end_layout
+
+\begin_layout Chapter
+Basic Tools on Designing Algorithms
+\end_layout
+
+\begin_layout Section
+Algorithms
+\end_layout
+
+\begin_layout Standard
+An algorithm is a finite set of instructions that when followed on certain
+ set of values (the input), halts to produce a desired set of values (the
+ output).
+ All algorithms follow some criteria - 
+\end_layout
+
+\begin_layout Itemize
+It should have an input set (zero or more values)
+\end_layout
+
+\begin_layout Itemize
+It should have an output set (one or more values)
+\end_layout
+
+\begin_layout Itemize
+Each instruction has to precisely clear.
+ No ambiguity
+\end_layout
+
+\begin_layout Itemize
+The algorithm should stop after a finite number of steps.
+\end_layout
+
+\begin_layout Itemize
+The steps should be simple enough.
+\end_layout
+
+\begin_layout Section*
+Computational Procedure
+\end_layout
+
+\begin_layout Standard
+A finite set of instructions that is clear and simple/effective (follows
+ 
+\begin_inset Formula $3,5$
+\end_inset
+
+) but which might/might not stop after a finite number of steps is a computation
+al procedure.
+ An example is a bash console, or an operating system.
+\end_layout
+
+\begin_layout Section*
+Program
+\end_layout
+
+\begin_layout Standard
+What is a program? It is just the algorithm, written in a programming language
+ which has a specific syntax.
+\end_layout
+
+\begin_layout Section
+Algorithm Specification
+\end_layout
+
+\begin_layout Standard
+An algorithm can be described in multiple ways.
+ We can use a natural language like English, or we could use a real programming
+ language like Python or C.
+ However, what is generally preferred is a mix of the two.
+ We call this convention 
+\series bold
+pseudocode
+\series default
+.
+ Pseudocode is just like writing English, except the fact that instructions
+ are quite precise and definite.
+ Some functions or keywords like 
+\series bold
+while
+\series default
+, 
+\series bold
+for
+\series default
+ etc.
+ are directly borrowed from simple programming languages so that the reader
+ is at ease with whatever he/she knows about programming languages, and
+ doesn't need to learn something new to learn algorithms.
+\end_layout
+
+\begin_layout Enumerate
+Comments are written down as
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State 
+\backslash
+Comment{This is where the comment occurs.}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Variable assignment is done as
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $x=5$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+In general, the common relational operators are
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $x==5$ 
+\backslash
+Comment{Is $x$ equal to $5$?}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $x>5$ 
+\backslash
+Comment{Is $x$ greater than $5$?}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $x<5$ 
+\backslash
+Comment{Is $x$ less than $5$?}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $x>=5$ 
+\backslash
+Comment{Is $x$ greater than or equal to $5$?}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $x<=5$ 
+\backslash
+Comment{Is $x$ less than or equal to $5$?}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+State $x!=5$ 
+\backslash
+Comment{Is $x$ not equal to $5$?}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The answers to these relational operators are boolean, i.e.
+ they can be either true or false.
+ We will show a true value by 
+\series bold
+True
+\series default
+ and a false value by 
+\series bold
+False
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The logical operators 
+\series bold
+and
+\series default
+, 
+\series bold
+or
+\series default
+, 
+\series bold
+not
+\series default
+ and their derivatives are used as such.
+\end_layout
+
+\begin_layout Enumerate
+Most of the loops are either 
+\series bold
+for
+\series default
+ or 
+\series bold
+while
+\series default
+ in nature.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+for
+\series default
+ loops use the following syntax - (Its similar to VB)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+For{$i=$ start 
+\backslash
+textbf{to} end 
+\backslash
+textbf{step} $1$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State statement(s)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+while 
+\series default
+loops use the following syntax -
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+While{condition}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State statement(s)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Performance Analysis
 \end_layout
 
 \end_body
