@@ -1003,7 +1003,7 @@ Suppose the sample space of an event/experiment
 \begin_inset Formula $E$
 \end_inset
 
- be denoted by 
+ is denoted by 
 \begin_inset Formula $S$
 \end_inset
 
@@ -1065,7 +1065,7 @@ and
 \begin_inset Formula $E_{2}$
 \end_inset
 
-be any two events of an experiment.
+ be any two events of an experiment.
  The 
 \series bold
 conditional probability 
@@ -1109,7 +1109,7 @@ and
 \begin_inset Formula $E_{2}$
 \end_inset
 
-are said to be independent if 
+ are said to be independent if 
 \begin_inset Formula $P(E_{1}\cap E_{2})=P(E_{1})\cdot P(E_{2})$
 \end_inset
 
@@ -1337,6 +1337,361 @@ Divide and Conquer
 
 \begin_layout Section
 General Way
+\end_layout
+
+\begin_layout Standard
+Divide and Conquer is a problem solving strategy in which we split the inputs
+ into 
+\begin_inset Formula $k$
+\end_inset
+
+ different parts, yielding 
+\begin_inset Formula $k$
+\end_inset
+
+ subproblems.
+ Then each of the subproblem is individually solved, using the general algorithm
+ and results are combined together.
+ The approach is a bit recursive.
+\end_layout
+
+\begin_layout Subsection*
+Control Abstraction
+\end_layout
+
+\begin_layout Standard
+Control Abstraction refers to a procedure whose flow of control is clear
+ but whose primary operations are specified by other procedures whose precise
+ meanings are left undefined.
+ We can write divide and conquer algorithms using control abstractions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/divide-conquer.svg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Time Complexity
+\end_layout
+
+\begin_layout Standard
+In general, the time complexity of a divide and conquer algorithm which
+ at each step, divides the input 
+\begin_inset Formula $n$
+\end_inset
+
+ given to it into 
+\begin_inset Formula $a$
+\end_inset
+
+ parts of size 
+\begin_inset Formula $n/b$
+\end_inset
+
+ can be suitably written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T(n)=\begin{cases}
+T(1) & n=1\\
+aT(n/b)+f(n) & n>1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $a,b$
+\end_inset
+
+ are known constants.
+ This is a recurrence relation, which can be solved using the substitution
+ method (just substitute 
+\begin_inset Formula $T(n/b)$
+\end_inset
+
+ over and over again until it disappears).
+ A rigorous analysis gives us the solution to this relation (master method).
+\end_layout
+
+\begin_layout Section
+Application to Binary Search
+\end_layout
+
+\begin_layout Standard
+Consider a list of elements as input, which are already sorted in non decreasing
+ order.
+ We need to find whether a given element 
+\begin_inset Formula $x$
+\end_inset
+
+ is present in the list or not.
+ A simple way would be to go through the list checking one element at a
+ time, until the list is finished.
+ However that would take 
+\begin_inset Formula $T(n)\leq n$
+\end_inset
+
+ where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the number of elements, so that is 
+\begin_inset Formula $O(n)$
+\end_inset
+
+ in nature.
+\end_layout
+
+\begin_layout Standard
+However, there is another faster way to find out this, exploiting the fact
+ that the list is sorted.
+ If we start from the middle of the list, (say the middle element is 
+\begin_inset Formula $y$
+\end_inset
+
+) and compare it to 
+\begin_inset Formula $x$
+\end_inset
+
+, then
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x>y$
+\end_inset
+
+ would mean 
+\begin_inset Formula $x$
+\end_inset
+
+ lies to the end of list, i.e.
+ towards the end with the largest element.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x<y$
+\end_inset
+
+ would mean 
+\begin_inset Formula $x$
+\end_inset
+
+ lies towards the end with the smallest element.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x=y$
+\end_inset
+
+ would mean 
+\begin_inset Formula $x$
+\end_inset
+
+ is the middle element, so yes, it exists.
+\end_layout
+
+\begin_layout Standard
+Similarly, until we find 
+\begin_inset Formula $x$
+\end_inset
+
+, at each step we reject half of the input we have, and so at the end we
+ must get 
+\begin_inset Formula $x$
+\end_inset
+
+ or our search must end in vain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Binary Search}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Binary-Search}{$a,l,r,x$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+If{$r==l$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$x==a[l]$} 
+\backslash
+Return $l$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+Else 
+\backslash
+: 
+\backslash
+Return $-1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Else
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State mid = $
+\backslash
+displaystyle{
+\backslash
+lfloor {l+r 
+\backslash
+over 2} 
+\backslash
+rfloor}$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$x==$ a[mid]} 
+\backslash
+Return mid
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+ElsIf{$x<$ a[mid]} 
+\backslash
+Return 
+\backslash
+Call{Binary-Search}{$a,l,$mid$-1,x$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+Else 
+\backslash
+: 
+\backslash
+Return 
+\backslash
+Call{Binary-Search}{$a,$mid$+1,r,x$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithm}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
