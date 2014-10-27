@@ -8,6 +8,11 @@
 \usepackage{algpseudocode}
 \end_preamble
 \use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -101,8 +106,8 @@ It should have an output set (one or more values)
 \end_layout
 
 \begin_layout Itemize
-Each instruction has to precisely clear.
- No ambiguity
+Each instruction has to be precisely clear.
+ No ambiguity.
 \end_layout
 
 \begin_layout Itemize
@@ -113,7 +118,7 @@ The algorithm should stop after a finite number of steps.
 The steps should be simple enough.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection
 Computational Procedure
 \end_layout
 
@@ -128,7 +133,7 @@ al procedure.
  An example is a bash console, or an operating system.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection
 Program
 \end_layout
 
@@ -306,7 +311,9 @@ Comment{Is $x$ less than or equal to $5$?}
 
 
 \backslash
-State $x!=5$ 
+State $x
+\backslash
+neq 5$ 
 \backslash
 Comment{Is $x$ not equal to $5$?}
 \end_layout
@@ -480,6 +487,856 @@ end{algorithmic}
 \end_deeper
 \begin_layout Section
 Performance Analysis
+\end_layout
+
+\begin_layout Subsection
+Space Complexity
+\end_layout
+
+\begin_layout Standard
+This is the amount of memory an algorithm needs to halt and produce a correct
+ output.
+\end_layout
+
+\begin_layout Subsection
+Time Complexity
+\end_layout
+
+\begin_layout Standard
+This is the amount of time an algorithm requires to complete.
+\end_layout
+
+\begin_layout Subsection
+Types of Analysis
+\end_layout
+
+\begin_layout Standard
+Broadly, performance analysis can be divided into two parts - 
+\end_layout
+
+\begin_layout Itemize
+Apriori, theoretical estimates
+\end_layout
+
+\begin_layout Itemize
+Posteriori, practical analysis
+\end_layout
+
+\begin_layout Subsection*
+Apriori Analysis
+\end_layout
+
+\begin_layout Standard
+In apriori analysis, we are given the input i.e.
+ as set of numbers and we estimate the time or space complexity in terms
+ of the input.
+ For example, let us find out the time complexity of the following algorithm
+ which just adds all the numbers from 
+\begin_inset Formula $1$
+\end_inset
+
+ to the input.
+ Let the input be 
+\begin_inset Formula $n$
+\end_inset
+
+, then a way to find the time complexity is to actually find the number
+ of instructions executed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithm} 
+\backslash
+caption{Sum of numbers from $1$ to $n$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{sum-upto-n}{$n$}%1
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State sum = $0$%2
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+For{$i=1$ to $n$}%3
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State sum = sum + $i$%4
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndFor%5
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State
+\backslash
+textbf{return} sum%6
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure%7
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Step 
+\begin_inset Formula $2$
+\end_inset
+
+ takes 
+\begin_inset Formula $1$
+\end_inset
+
+ instruction, step 
+\begin_inset Formula $3$
+\end_inset
+
+ runs for 
+\begin_inset Formula $n+1$
+\end_inset
+
+ instructions because the 
+\series bold
+for
+\series default
+ loop starts at 
+\begin_inset Formula $i=1$
+\end_inset
+
+ and goes on till 
+\begin_inset Formula $i=n$
+\end_inset
+
+, but in the next iteration finds out that 
+\begin_inset Formula $i=n+1$
+\end_inset
+
+ which was not intended.
+ Every 
+\series bold
+for 
+\series default
+loop is like that in real programming languages.
+ Similarly step 
+\begin_inset Formula $4$
+\end_inset
+
+ and 
+\begin_inset Formula $5$
+\end_inset
+
+ run for 
+\begin_inset Formula $n$
+\end_inset
+
+ times, and step 
+\begin_inset Formula $6$
+\end_inset
+
+ takes 
+\begin_inset Formula $1$
+\end_inset
+
+ instruction.
+ So total number of instructions, say 
+\begin_inset Formula $T(n)$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+T(n)=1+(n+1)+2n+1=3n+3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, number of instructions is linear in terms of input.
+\end_layout
+
+\begin_layout Quote
+In general, apriori analysis of time complexity means finding out the instructio
+n count, since that is the same for every machine the algorithm runs on,
+ and is a valid theoretical estimate of the actual running time.
+\end_layout
+
+\begin_layout Standard
+For doing apriori analysis of space complexity, if the data used in the
+ algorithm is all of the same type, i.e.
+ all numbers or all characters etc., then we find out the capacity of the
+ variables used.
+ That is the general idea.
+\end_layout
+
+\begin_layout Subsection*
+Priori Analysis
+\end_layout
+
+\begin_layout Standard
+It refers to the actual practical running time for the given algorithm,
+ and it strictly depends on the system.
+ Better systems mean lesser running times and vice versa holds.
+\end_layout
+
+\begin_layout Subsection
+Asymptotic Notations
+\end_layout
+
+\begin_layout Standard
+These are the notations which allow us to make meaningful approximations
+ about the behavior of an algorithm, i.e.
+ how much time it might take and how much space it might take.
+ Since these are theoretical notations, they are used to analyse mathematically
+ the time and space needed by an algorithm, and hence are useful for apriori
+ analysis.
+\end_layout
+
+\begin_layout Standard
+There is a reason why these notations are called 
+\series bold
+asymptotic
+\series default
+.
+ This is because the calculations done using these notations represent how
+ the actual algorithm behaves for large inputs, even though it may not be
+ feasible to run for these large inputs.
+ Let us mathematically see these notations -
+\end_layout
+
+\begin_layout Subsubsection
+Big Oh (
+\begin_inset Formula $O$
+\end_inset
+
+) Notation
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $f(n)=O(g(n))$
+\end_inset
+
+ if and only if there exist positive constants 
+\begin_inset Formula $c$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{0}$
+\end_inset
+
+ such that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(n)\leq c\cdot g(n)\mbox{ for all \ensuremath{n,n\geq n_{0}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+If 
+\begin_inset Formula $f(n)=a_{m}n^{m}+\cdot\cdot\cdot+a_{1}n+a_{0}$
+\end_inset
+
+, then 
+\begin_inset Formula $f(n)=O(n^{m})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Big Omega (
+\begin_inset Formula $\Omega$
+\end_inset
+
+) Notation
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $f(n)=\Omega(g(n))$
+\end_inset
+
+ if and only if there exist positive constants 
+\begin_inset Formula $c$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{0}$
+\end_inset
+
+ such that 
+\begin_inset Formula 
+\[
+f(n)\geq c\cdot g(n)\mbox{ for all \ensuremath{n,n\geq n_{0}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+If 
+\begin_inset Formula $f(n)=a_{m}n^{m}+\cdot\cdot\cdot+a_{1}n+a_{0}$
+\end_inset
+
+, then 
+\begin_inset Formula $f(n)=\Omega(n^{m})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Big Theta (
+\begin_inset Formula $\Theta$
+\end_inset
+
+) Notation
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $f(n)=\Theta(g(n))$
+\end_inset
+
+ if and only if there exist positive constants 
+\begin_inset Formula $c_{1},c_{2},n_{0}$
+\end_inset
+
+ such that 
+\begin_inset Formula 
+\[
+c_{1}g(n)\leq f(n)\leq c_{2}g(n)\mbox{ for all \ensuremath{n,n\geq0}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+If 
+\begin_inset Formula $f(n)=O(g(n))$
+\end_inset
+
+ and 
+\begin_inset Formula $f(n)=\Omega(g(n))$
+\end_inset
+
+ then 
+\begin_inset Formula $f(n)=\Theta(g(n))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary
+If 
+\begin_inset Formula $f(n)=a_{m}n^{m}+\cdot\cdot\cdot+a_{1}n+a_{0}$
+\end_inset
+
+, then 
+\begin_inset Formula $f(n)=\Theta(n^{m})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Little Oh (
+\begin_inset Formula $o$
+\end_inset
+
+) Notation
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $f(n)=o(g(n))$
+\end_inset
+
+ if and only if 
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}\frac{f(n)}{g(n)}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Little Omega (
+\begin_inset Formula $\omega$
+\end_inset
+
+) Notation
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset Formula $f(n)=\omega(g(n))$
+\end_inset
+
+ if and only if 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{n\rightarrow\infty}\frac{g(n)}{f(n)}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Randomized Algorithms
+\end_layout
+
+\begin_layout Subsection
+Basics
+\end_layout
+
+\begin_layout Standard
+In probability, we conduct experiments and analyze their outcomes.
+ An 
+\series bold
+experiment 
+\series default
+is a procedure that has some definite outcomes, or
+\series bold
+ events
+\series default
+.
+ For example, tossing a coin is an experiment whose outcomes are either
+ heads, or tails.
+ Each possible outcome is called a 
+\series bold
+sample point
+\series default
+.
+ Sample points constitute the 
+\series bold
+sample space
+\series default
+, which is simply the set of all possible outcomes for the given experiment,
+ whether discrete or continuous.
+\end_layout
+
+\begin_layout Subsubsection*
+What is probability?
+\end_layout
+
+\begin_layout Standard
+Suppose the sample space of an event/experiment 
+\begin_inset Formula $E$
+\end_inset
+
+ be denoted by 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ Then if any outcome is the event 
+\begin_inset Formula $X$
+\end_inset
+
+, then the probability of that outcome 
+\begin_inset Formula $X$
+\end_inset
+
+ is defined as 
+\begin_inset Formula 
+\[
+P(X)=\frac{n(X)}{n(S)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $n(X)$
+\end_inset
+
+ are the number of elements that correspond to the outcome 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $n(S)$
+\end_inset
+
+ are the number of elements that correspond to the sample space (basically
+ the size of the sample space).
+\end_layout
+
+\begin_layout Standard
+Sum of probabilities of all the outcomes is 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Conditional Probability
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $E_{2}$
+\end_inset
+
+be any two events of an experiment.
+ The 
+\series bold
+conditional probability 
+\series default
+of 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ occurring given 
+\begin_inset Formula $E_{2}$
+\end_inset
+
+ has occurred is denoted by 
+\begin_inset Formula $P(E_{1}|E_{2})$
+\end_inset
+
+ and is given as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(E_{1}|E_{2})=\frac{P(E_{1}\cap E_{2})}{P(E_{2})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Independence
+\end_layout
+
+\begin_layout Standard
+Two events 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $E_{2}$
+\end_inset
+
+are said to be independent if 
+\begin_inset Formula $P(E_{1}\cap E_{2})=P(E_{1})\cdot P(E_{2})$
+\end_inset
+
+ i.e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(E_{1}|E_{2})=P(E_{1})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Random Variable
+\end_layout
+
+\begin_layout Standard
+A random variable on the sample space 
+\begin_inset Formula $S$
+\end_inset
+
+ of an experiment is a function that maps 
+\begin_inset Formula $S$
+\end_inset
+
+ to the set of real numbers.
+ Hence, if 
+\begin_inset Formula $X$
+\end_inset
+
+ is the random variable, then 
+\begin_inset Formula $X(s)$
+\end_inset
+
+ is the image of 
+\begin_inset Formula $s\in S$
+\end_inset
+
+ such that 
+\begin_inset Formula $X(s)\in\mathbf{R}$
+\end_inset
+
+.
+ If the range of 
+\begin_inset Formula $X$
+\end_inset
+
+ is finite and countable, then we say that 
+\begin_inset Formula $X$
+\end_inset
+
+ is a discrete randome variable.
+\end_layout
+
+\begin_layout Subsubsection*
+Expected Value
+\end_layout
+
+\begin_layout Standard
+The expected value or the mean of any random variable 
+\begin_inset Formula $X$
+\end_inset
+
+ is defined to be
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[X]={\displaystyle \sum_{i=1}^{n}}P(s_{i})\cdot X(s_{i})\mbox{ for all \ensuremath{s_{i}\in S}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Probability Distribution
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $X$
+\end_inset
+
+ is a discrete random variable such that its range is 
+\begin_inset Formula $\{r_{1},r_{2},...,r_{m}\}$
+\end_inset
+
+ then the probability distribution of 
+\begin_inset Formula $X$
+\end_inset
+
+ is the sequence 
+\begin_inset Formula $\{P(X=r_{1}),P(X=r_{2}),...,P(X=r_{m})\}$
+\end_inset
+
+.
+ Sum over the entire distribution is 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Binomial Distribution
+\end_layout
+
+\begin_layout Standard
+A Bernoulli trial is an experiment that has two possible outcomes, i.e.
+ success and failure.
+ So, if there are 
+\begin_inset Formula $n$
+\end_inset
+
+ trials, then the sample space has 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ sample points.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a random variable which is the number of successes in the 
+\begin_inset Formula $n$
+\end_inset
+
+ trials.
+ Then 
+\begin_inset Formula 
+\[
+P(X=i)=\bigg(\begin{array}{c}
+n\\
+i
+\end{array}\bigg)\cdot p^{i}(1-p)^{n-i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $p$
+\end_inset
+
+ is the probability of success.
+\end_layout
+
+\begin_layout Standard
+It comes out, that the expected value of 
+\begin_inset Formula $X$
+\end_inset
+
+ is 
+\begin_inset Formula $np$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Description of Randomized Algorithms
+\end_layout
+
+\begin_layout Standard
+Randomized algorithms have steps that rely on random choices.
+ Those choices are generated when the algorithm is running with the help
+ of randomizers (like random number generators).
+ Randomized algorithms can be of two types -
+\end_layout
+
+\begin_layout Enumerate
+Monte Carlo type
+\end_layout
+
+\begin_layout Enumerate
+Las Vegas type
+\end_layout
+
+\begin_layout Subsection
+Monte Carlo Randomized Algorithms
+\end_layout
+
+\begin_layout Standard
+Outputs of these algorithms vary for each run, however the run time is nearly
+ the same for each run.
+\end_layout
+
+\begin_layout Subsection
+Las Vegas Randomized Algorithms
+\end_layout
+
+\begin_layout Standard
+Run time is a random variable that depends on the random choices made during
+ execution.
+\end_layout
+
+\begin_layout Subsection
+Idea
+\end_layout
+
+\begin_layout Standard
+A randomized algorithm can be seen as a family of algorithms.
+ For any input, some of these algorithms may run for longer time or may
+ give wrong outputs.
+ We design the algorithm, however, such that the fraction of such bad instances
+ is very less.
+ If we can design the algorithm to have a large fraction of correct instances,
+ then we can be sure that in general, any run will give a correct output.
+\end_layout
+
+\begin_layout Chapter
+Divide and Conquer
+\end_layout
+
+\begin_layout Section
+General Way
 \end_layout
 
 \end_body
