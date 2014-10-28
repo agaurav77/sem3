@@ -1521,28 +1521,15 @@ However, there is another faster way to find out this, exploiting the fact
 \end_layout
 
 \begin_layout Standard
-Similarly, until we find 
-\begin_inset Formula $x$
-\end_inset
-
-, at each step we reject half of the input we have, and so at the end we
- must get 
-\begin_inset Formula $x$
-\end_inset
-
- or our search must end in vain.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-
-
-\backslash
-begin{algorithm}
-\end_layout
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
 
@@ -1682,15 +1669,518 @@ EndProcedure
 end{algorithmic}
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
 
 
-\backslash
-end{algorithm}
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+Similarly, until we find 
+\begin_inset Formula $x$
+\end_inset
+
+, at each step we reject half of the input we have, and so at the end we
+ must get 
+\begin_inset Formula $x$
+\end_inset
+
+ or our search must end in vain.
+ The recurrence relation is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T(n)=\begin{cases}
+T(1) & n=1\\
+T(n/2)+c & n>1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the constant work is accounted for by 
+\begin_inset Formula $c$
+\end_inset
+
+, hence by substitution,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+T(n) & = & T(n/2)+c\\
+ & = & T(n/4)+2c\\
+ & = & T(n/8)+3c\\
+ & \vdots\\
+ & = & T(n/2^{k})+kc\\
+ & = & T(1)+c\cdot\log_{2}n=O(\log n)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence, the time complexity of binary search is logarithmic.
+\end_layout
+
+\begin_layout Section
+Maximum or Minimum in a List
+\end_layout
+
+\begin_layout Standard
+We are given a list 
+\begin_inset Formula $a$
+\end_inset
+
+ of 
+\begin_inset Formula $n$
+\end_inset
+
+ values and we need to find the maximum or minimum value in it (suppose
+ we want both the values).
+ What is the best possible way?
+\end_layout
+
+\begin_layout Subsection
+Straightforward Approach
+\end_layout
+
+\begin_layout Standard
+A simple straightforward approach goes through the list linearly and records
+ at each step the maximum and minimum values.
+ This approach takes 
+\begin_inset Formula $O(n)$
+\end_inset
+
+ time at worst.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Straightforward Maximum Minimum}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Straightforward-Max-Min}{$a,n,$max$,$min}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State max = min = a[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+For{$i=2$ 
+\backslash
+textbf{to} $n$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$a[i]>$max} 
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State max = $a[i]$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$a[i]<$min} 
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State min = $a[i]$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}	
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Line 
+\begin_inset Formula $2$
+\end_inset
+
+ runs for 
+\begin_inset Formula $1$
+\end_inset
+
+ time, Line 
+\begin_inset Formula $3$
+\end_inset
+
+ runs for 
+\begin_inset Formula $n$
+\end_inset
+
+ times, and so does each of the statement inside for 
+\begin_inset Formula $n-1$
+\end_inset
+
+ times, upto line 
+\begin_inset Formula $9$
+\end_inset
+
+.
+ Hence, 
+\begin_inset Formula 
+\[
+T(n)=1+n+7(n-1)=8n-6=O(n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Finding maximum-minimum using Divide and Conquer
+\end_layout
+
+\begin_layout Standard
+We can reduce the number of instructions executed if we use divide and conquer.
+ So, in this strategy, let us divide the input 
+\begin_inset Formula $a[i:j]$
+\end_inset
+
+ into some parts (say halves), and find out their maximum and minimum using
+ the same strategy (let them be max
+\begin_inset Formula $_{1}$
+\end_inset
+
+, max
+\begin_inset Formula $_{2}$
+\end_inset
+
+ and min
+\begin_inset Formula $_{1}$
+\end_inset
+
+, min
+\begin_inset Formula $_{2}$
+\end_inset
+
+).
+ Then the maximum and minimum of entire input can be found out as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{max} & = & \mbox{maximum}(\mbox{max}_{1},\mbox{max}_{2})\\
+\mbox{min} & = & \mbox{minimum}(\mbox{min}_{1},\mbox{min}_{2})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Maximum Minimum using Divide and Conquer}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Max-Min}{$a, i, j,$ max$,$ min}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+If{$i==j$} max = min = $a[i]$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+ElsIf{$i==j-1$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$a[i]<a[j]$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State max = $a[j]$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State min = $a[i]$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+Else
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State max = $a[i]$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State min = $a[j]$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Else
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State mid = $
+\backslash
+displaystyle{
+\backslash
+lfloor 
+\backslash
+frac{i+j}{2} 
+\backslash
+rfloor}$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State 
+\backslash
+Call{Max-Min}{$a, i,$ mid$,$ max$_1,$ min$_1$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State 
+\backslash
+Call{Max-Min}{$a,$ mid$+1,j,$ max$_2, $ min$_2$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{max$_1<$ max$_2$} max = max$_2$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+Else 
+\backslash
+: max = max$_1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{min$_1 < $ min$_2$} min = min$_1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+Else 
+\backslash
+: min = min$_2$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}		
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
