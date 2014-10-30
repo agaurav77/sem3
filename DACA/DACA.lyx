@@ -33,6 +33,7 @@ figs-within-sections
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -4249,6 +4250,644 @@ It can be checked by substitution that this recurrence relation gives us
  in its worst case time complexity is significantly more than the naive
  multiplication algorithm.
  Moreover, it consumes more space.
+\end_layout
+
+\begin_layout Chapter
+The Greedy Method
+\end_layout
+
+\begin_layout Section
+The General Way
+\end_layout
+
+\begin_layout Standard
+This paradigm is applicable to a large variety of problems.
+ Greedy approach requires at each step to find out a temporary output, selected
+ via a specific selection procedure, and then process that output into the
+ solution set if it is feasible, i.e.
+ considering local optimality.
+\end_layout
+
+\begin_layout Section
+Optimal Storage on Tapes
+\end_layout
+
+\begin_layout Standard
+Suppose there are 
+\begin_inset Formula $n$
+\end_inset
+
+ programs which are to be stored on a computer tape of length 
+\begin_inset Formula $l$
+\end_inset
+
+.
+ If the program 
+\begin_inset Formula $i$
+\end_inset
+
+ has length 
+\begin_inset Formula $l_{i}$
+\end_inset
+
+, then to store all the programs,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+{\displaystyle \bigg\{\sum_{i=1}^{n}l_{i}\bigg\}\leq l}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let us assume that this condition is satisfied.
+ Suppose we choose an ordering of the programs (one out of 
+\begin_inset Formula $n!$
+\end_inset
+
+ orderings).
+ We define the time required to access a program at its 
+\series bold
+retrieval
+\series default
+ time.
+ Then for the program at 
+\begin_inset Formula $j$
+\end_inset
+
+th position in the ordering (say 
+\begin_inset Formula $<a_{1},a_{2},a_{3}\dotsb a_{n}>$
+\end_inset
+
+ where 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+'s are 
+\begin_inset Formula $l_{i}$
+\end_inset
+
+'s in a jumbled order) is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T(j)=a_{1}+a_{2}+\dotsb+a_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The problem is to choose an ordering such that the 
+\series bold
+mean retrieval time 
+\series default
+(MRT) is minimized.
+ MRT can be defined as the mean of all the retreival times.
+ So,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mbox{MRT}={\displaystyle \frac{1}{n}\bigg\{ T(1)+T(2)+\dotsb+T(n)\bigg\}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Solution using Greedy Approach
+\end_layout
+
+\begin_layout Standard
+Since we need to minimize MRT, one way which would be locally optimal would
+ be to maintain a sum of ordering done till that stage, and add that element
+ that minimizes the next sum.
+ This can be implemented simply in 
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+ time, or using heaps it can be implemented in 
+\begin_inset Formula $O(n\lg n)$
+\end_inset
+
+ time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Optimal Storage on Tapes using Heaps}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Optimal-Tape-Storage}{$l,n$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State order = 
+\backslash
+{
+\backslash
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+For{$i=1$ 
+\backslash
+textbf{to} $n$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State 
+\backslash
+Call{Add-to-Heap}{$l[i]$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+For{$i=1$ 
+\backslash
+textbf{to} $n$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State item = 
+\backslash
+Call{Extract-Min}{}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State 
+\backslash
+textbf{append} item.i 
+\backslash
+textbf{to} order
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State 
+\backslash
+Return order
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, the non decreasing permutation of 
+\begin_inset Formula $l$
+\end_inset
+
+ is the optimal solution.
+ This can be proved by contradiction.
+\end_layout
+
+\begin_layout Section
+Job Sequencing with Deadlines
+\end_layout
+
+\begin_layout Standard
+We are given a set of 
+\begin_inset Formula $n$
+\end_inset
+
+ jobs.
+ For any job 
+\begin_inset Formula $i$
+\end_inset
+
+, we are given its deadline 
+\begin_inset Formula $d_{i}$
+\end_inset
+
+ and profit 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+.
+ If the job is completed by its deadline, then 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ is earned.
+ To complete a job, it has to be processed for unit time.
+ A 
+\series bold
+feasible
+\series default
+ solution is a subset of the jobs, such that in this subset all the jobs
+ are completed before time.
+ The feasible solution with the maximum total profit is called the 
+\series bold
+optimal
+\series default
+ solution.
+ Suppose the subset is 
+\begin_inset Formula $J$
+\end_inset
+
+.
+ Then the total profit 
+\begin_inset Formula $P$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\[
+P={\displaystyle \sum_{i\in J}p_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+The Greedy Way
+\end_layout
+
+\begin_layout Standard
+Because we have to maximise 
+\begin_inset Formula $P$
+\end_inset
+
+, we choose the next job such that it maximizes the new 
+\begin_inset Formula $P$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Job Sequencing with Deadlines}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Job-Sequencing}{$n,J,D$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State 
+\backslash
+Comment{Jobs $1 
+\backslash
+dotsb n$ are ordered in non increasing order of $P$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $J[0]=0$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $D[J[0]]=0$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $J[1]=1$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $k=1$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+For{$i=2$ 
+\backslash
+textbf{to} $n$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $r=k$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+While{$D[J[r]] > D[i]$ 
+\backslash
+textbf{and} $D[J[r]] 
+\backslash
+neq r$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $r=r-1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$D[J[r]] 
+\backslash
+leq D[i]$ 
+\backslash
+textbf{and} $D[i] > r$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+For{$q=k$ 
+\backslash
+textbf{to} $r-1$ 
+\backslash
+textbf{step} $-1$}
+\end_layout
+
+\begin_layout Plain Layout
+
+				
+\backslash
+State $J[q-1]=J[q]$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $J[r+1]=i$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $k=k+1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Time Complexity
+\end_layout
+
+\begin_layout Standard
+Outer for loop takes 
+\begin_inset Formula $O(n)$
+\end_inset
+
+ time.
+ For each iteration, the while loop takes 
+\begin_inset Formula $O(k)$
+\end_inset
+
+ time and if the 
+\series bold
+if 
+\series default
+block is executed then it takes 
+\begin_inset Formula $O(k-r)=O(k)$
+\end_inset
+
+ time to insert a job into the solution.
+ Hence the total time complexity should be 
+\begin_inset Formula $O(n)\cdot O(k)=O(nk)$
+\end_inset
+
+ where 
+\begin_inset Formula $k$
+\end_inset
+
+ is the number of jobs in the final solution.
+ Because 
+\begin_inset Formula $k\leq n$
+\end_inset
+
+, so 
+\begin_inset Formula $k=O(n)$
+\end_inset
+
+.
+ Hence for this version of job sequencing, the time complexity is 
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Faster Job Scheduling
+\end_layout
+
+\begin_layout Standard
+Another way to implement the same idea would be to use disjoint sets data
+ structure, which allows for 
+\series bold
+collapse-find
+\series default
+ and 
+\series bold
+union
+\series default
+ operations.
+ In that way, the time complexity reduces to 
+\begin_inset Formula $O(n\alpha(2n,n))$
+\end_inset
+
+ where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ signifies the inverse Ackermann function.
+ So, the time compexity is near linear.
+\end_layout
+
+\begin_layout Section
+Optimal Merge Patterns
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
