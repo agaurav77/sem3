@@ -2181,7 +2181,2074 @@ end{algorithmic}
 \end_layout
 
 \begin_layout Standard
+The procedure is initially invoked using
+\end_layout
 
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Call{Max-Min}{$a,1,n,x,y$}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and the values of maximum and minimum get stored into 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ The instruction count for the steps taking constant time, when taken, give
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T(n)=\begin{cases}
+T(\lceil n/2\rceil)+T(\lfloor n/2\rfloor+9 & n>2\\
+6 & n=2\\
+1 & n=1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, for the case when 
+\begin_inset Formula $n=2^{k}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+T(n) & = & 2T(n/2)+9\\
+ & = & 2\{2T(n/4)+9\}+9\\
+ & = & 2^{2}T(n/4)+9(1+2)\\
+ & = & 2^{3}T(n/8)+9(1+2+2^{2})\\
+ & \vdots\\
+ & = & 2^{i}T(n/2^{i})+9(2^{i}-1)\\
+ & = & 2^{k-1}T(2)+9(2^{k-1}-1)\\
+ & = & 2^{k-1}(6+9)-9\\
+ & = & 7.5n-9=O(n)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that the constant however in the worst case, is 
+\begin_inset Formula $7.5$
+\end_inset
+
+ compared to 
+\begin_inset Formula $8$
+\end_inset
+
+ in the straightforward way.
+ But this method is not preferred in practice, because it uses too much
+ recursion stack space (space complexity) than the simple straightforward
+ way.
+\end_layout
+
+\begin_layout Section
+Merge Sort
+\end_layout
+
+\begin_layout Standard
+Merge sort is an algorithm to sort a given list 
+\begin_inset Formula $a$
+\end_inset
+
+ of 
+\begin_inset Formula $n$
+\end_inset
+
+ elements in 
+\begin_inset Formula $O(n\lg n)$
+\end_inset
+
+ time.
+ It follows the divide and conquer paradigm.
+ The basic idea is to divide the list into two halves, sort them recursively
+ and combine the results.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Merge Sort}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Merge-Sort}{$a,$ low, high}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+If{low < high}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State mid = $
+\backslash
+displaystyle{
+\backslash
+lfloor 
+\backslash
+frac{
+\backslash
+mbox{low+high}}{2} 
+\backslash
+rfloor}$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State 
+\backslash
+Call{Merge-Sort}{$a,$ low, mid}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State 
+\backslash
+Call{Merge-Sort}{$a,$ mid$+1,$ high}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State 
+\backslash
+Call{Merge}{$a,$ low, mid, high}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The merge subroutine receives two sorted lists 
+\begin_inset Formula $a[\mbox{low}:\mbox{mid}]$
+\end_inset
+
+ and 
+\begin_inset Formula $a[\mbox{mid+1}:\mbox{high}]$
+\end_inset
+
+.
+ It browses through both the lists and merges them, taking one element at
+ a time from any one of the lists, whichever is smaller.
+ At the end, we get a sorted list in 
+\begin_inset Formula $O(n)$
+\end_inset
+
+ time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Merge}
+\backslash
+Comment{$b$ is a global array in which the result is stored temporarily.}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Merge}{$a,$ low, mid, high}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $h$ = low
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $i$ = low
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $j$ = mid+1
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+While{$h 
+\backslash
+leq$ mid 
+\backslash
+textbf{and} $j 
+\backslash
+leq$ high}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$a[h] 
+\backslash
+leq a[j]$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $b[i]=a[h]$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $h=h+1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+Else
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $b[i]=a[j]$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $j=j+1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+If{$h>$ mid}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+For{$k=j$ 
+\backslash
+textbf{to} high}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $b[i]=a[k]$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $i=i+1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Else
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+For{$k=h$ 
+\backslash
+textbf{to} mid}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $b[i]=a[k]$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $i=i+1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+For{$k$ = low 
+\backslash
+textbf{to} high}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $a[k]=b[k]$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The time complexity of 
+\series bold
+merge
+\series default
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(n)=3+4\cdot\max(\lfloor n/2\rfloor,\lceil n/2\rceil)+n
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $n=2^{k}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+f(n)=3+2n+n=3+3n
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So the time complexity of 
+\series bold
+merge-sort
+\series default
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T(n)=\begin{cases}
+1 & n=1\\
+T(\lceil n/2\rceil)+T(\lfloor n/2\rfloor)+f(n)+2 & n>1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T(n)=\begin{cases}
+1 & n=1\\
+2T(n/2)+3n+5 & n>1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using substitution for 
+\begin_inset Formula $n>1$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+T(n) & = & 2T(n/2)+3n+5\\
+ & = & 2(2T(n/4)+3n/2+5)+3n+5\\
+ & = & 2^{2}T(n/4)+3n(1+1)+5(1+2)\\
+ & = & 2^{2}(2T(n/8)+3n/4+5)+3n(1+1)+5(1+2)\\
+ & = & 2^{3}T(n/8)+3n(3)+5(1+2+2^{2})\\
+ & \vdots\\
+ & = & 2^{i}T(n/2^{i})+3ni+5(2^{i}-1)\\
+ & = & 2^{k}T(n/2^{k})+3nk+5(2^{k}-1)\\
+ & = & nT(1)+3n\lg n+5(n-1)\\
+ & = & 3n\lg n+6n-5=O(n\lg n)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Quick Sort
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Hoare's Partition}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Partition}{$a,l,r$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $v=a[l]$
+\backslash
+Comment{$v$ is the pivot element}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $i=m$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $j=p$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+While{$i<j$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+While{$a[i]<v$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $i=i+1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+While{$a[j] 
+\backslash
+geq v$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $j=j+1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$i<j$} 
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State 
+\backslash
+textbf{swap} $a[i] 
+\backslash
+leftrightarrow a[j]$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $a[m]=a[j]$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State $a[j]=v$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State 
+\backslash
+Return $j$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This sort is more efficient than merge sort.
+ Here the list 
+\begin_inset Formula $a$
+\end_inset
+
+ of 
+\begin_inset Formula $n$
+\end_inset
+
+ elements is divided in such a way that no merging is later needed.
+ Here we partition the list into two halves about a pivot element so that
+ all the elements greater than the pivot lie on the right side of it and
+ those less than the pivot lie on its left side.
+\end_layout
+
+\begin_layout Standard
+There are two versions of 
+\series bold
+partition
+\series default
+ available - 
+\end_layout
+
+\begin_layout Itemize
+Hoare's 
+\series bold
+partition
+\series default
+, the original 
+\series bold
+partition 
+\series default
+procedure
+\end_layout
+
+\begin_layout Itemize
+Lomuto's 
+\series bold
+partition
+\series default
+, the newer (and easier) 
+\series bold
+partition
+\series default
+ procedure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Quick Sort}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Quick-Sort}{$a,p,q$}
+\backslash
+Comment{Need to sort $a[p:q]$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+If{$p<q$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $j =$ 
+\backslash
+Call{Partition}{$a,p,q+1$}
+\backslash
+Comment{$a[j]$ is the pivot}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State 
+\backslash
+Call{Quick-Sort}{$a,p,j-1$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State 
+\backslash
+Call{Quick-Sort}{$a,j+1,q$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State 
+\backslash
+Comment{No need for combining solutions.}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Time Complexity
+\end_layout
+
+\begin_layout Standard
+Suppose we choose a pivot 
+\begin_inset Formula $a[j]$
+\end_inset
+
+ such that the list 
+\begin_inset Formula $a[p:q]$
+\end_inset
+
+ is divided into size 
+\begin_inset Formula $k$
+\end_inset
+
+ and 
+\begin_inset Formula $n-k$
+\end_inset
+
+ where 
+\begin_inset Formula $n=q-p+1$
+\end_inset
+
+.
+ Then, because the 
+\series bold
+partition 
+\series default
+algorithm takes at most 
+\begin_inset Formula $O(n)$
+\end_inset
+
+ comparisons, we can say it did 
+\begin_inset Formula $\alpha n$
+\end_inset
+
+ comparisons where 
+\begin_inset Formula $0\leq\alpha\leq1$
+\end_inset
+
+.
+ Hence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T(n)=T(k)+T(n-k)+\alpha n
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Worst Case Analysis
+\end_layout
+
+\begin_layout Standard
+The quick sort algorithm recursion tree depends on the choice of pivot chosen.
+ In the worst case, this tree will have the largest depth, so, at each step
+ 
+\begin_inset Formula $a[p:q]$
+\end_inset
+
+ is at least divided into sizes 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-1$
+\end_inset
+
+.
+ Hence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+T(n) & \leq & T(1)+T(n-1)+\alpha n\\
+ & = & T(1)+(T(1)+T(n-2)+\alpha(n-1))+\alpha n\\
+ & = & 2T(1)+T(n-2)+\alpha(n+(n-1))\\
+ & \vdots\\
+ & = & iT(1)+T(n-i)+\alpha(n+(n-1)+\dotsb+(n-i+1))\\
+ & = & (n-1)T(1)+T(1)+\alpha(1+2+\dotsb+(n-1))\\
+ & = & nT(1)+\frac{\alpha n(n-1)}{2}=O(n^{2})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Best Case Analysis
+\end_layout
+
+\begin_layout Standard
+In the best case, the recursion tree has the smallest size, so here at each
+ step, it can be thought of as being divided into sizes 
+\begin_inset Formula $n/2$
+\end_inset
+
+ each.
+ Then,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+T(n) & = & 2T(n/2)+\alpha n\\
+ & = & 2(2T(n/4)+\alpha n/2)+\alpha n\\
+ & = & 2^{2}T(n/4)+2\alpha n\\
+ & \vdots\\
+ & = & 2^{i}T(n/2^{i})+i\alpha n\\
+ & = & 2^{k}T(n/2^{k})+k\alpha n\\
+ & = & nT(n/n)+\alpha n\lg n\\
+ & = & nT(1)+\alpha n\lg n=O(n\lg n)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Average Case
+\end_layout
+
+\begin_layout Standard
+In the average case, we need to find the average value of 
+\begin_inset Formula $T(n)$
+\end_inset
+
+ over all 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ Ideally it should be between the best case and worst case.
+ Using the notation 
+\begin_inset Formula $T(1:k)=T(1)+T(2)+\dotsb+T(k)$
+\end_inset
+
+ and the fact that 
+\begin_inset Formula $P(T(k)\mbox{ occurs})={\displaystyle \frac{1}{n-1}}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\mbox{avg }T(n) & = & \mbox{avg }T(k)+\mbox{avg }T(n-k)+\alpha n\\
+ & = & {\displaystyle \sum_{k=1}^{n-1}T(k)\cdot P(T(k)}\mbox{ occurs})+{\displaystyle \sum_{k=1}^{n-1}T(n-k)\cdot P(T(n-k)}\mbox{ occurs})+\alpha n\\
+ & = & {\displaystyle \frac{2}{n-1}T(1:n-1)}+\alpha n\\
+ & = & {\displaystyle \frac{2}{n-1}T(1:n-2)+\frac{2}{n-1}T(n-1)+\alpha n}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Plugging in the values recursively we find
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+T(n) & = & {\displaystyle \frac{2}{n-1}T(1:n-2)}+\frac{2}{n-1}\bigg\{\frac{2}{n-2}T(1:n-2)+\alpha(n-1)\bigg\}+\alpha n\\
+ & = & {\displaystyle \frac{2}{n-1}T(1:n-2)\bigg\{1+\frac{2}{n-2}\bigg\}}+\alpha n+2\alpha\\
+ & = & {\displaystyle \frac{2n}{(n-1)(n-2)}T(1:n-2)+\alpha n+2\alpha}\\
+ & = & {\displaystyle \frac{2n}{(n-1)(n-2)}T(1:n-3)+\frac{2n}{(n-1)(n-2)}\bigg\{\frac{2}{n-3}T(1:n-3)+\alpha(n-2)\bigg\}+\alpha n+2\alpha}\\
+ & = & {\displaystyle \frac{2n}{(n-1)(n-2)}T(1:n-3)\bigg\{1+\frac{2}{n-3}\bigg\}+\alpha n+2\alpha+2\alpha\frac{n}{n-1}}\\
+ & = & \frac{2n}{(n-2)(n-3)}T(1:n-3)+\alpha n+2\alpha n\bigg\{\frac{1}{n}+\frac{1}{n-1}\bigg\}\\
+ & \vdots\\
+ & = & {\displaystyle \frac{2n}{(n-k)(n-k-1)}T(1:n-k-1)+\alpha n+2\alpha n\bigg\{\frac{1}{n}+\dotsb+\frac{1}{n-k+1}\bigg\}}\\
+ & = & {\displaystyle \frac{2n}{2\cdot1}T(1:1)+\alpha n+2\alpha n\bigg\{\frac{1}{n}+\dotsb+\frac{1}{3}\bigg\}}\\
+ & = & nT(1)-2\alpha n+2\alpha n{\displaystyle \sum_{i=1}^{n}\frac{1}{i}}\\
+ & \leq & nT(1)-2\alpha n+2\alpha n{\displaystyle \int_{1}^{n}\frac{1}{x}dx}\\
+ & = & nT(1)-2\alpha n+2\alpha n\ln n=O(n\lg n)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Randomized Quick Sort
+\end_layout
+
+\begin_layout Standard
+We could replace line 
+\begin_inset Formula $2$
+\end_inset
+
+ in Hoare's 
+\series bold
+partition
+\series default
+ algorithm by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v=\mbox{random}(a,l,r)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the random function chooses an element in 
+\begin_inset Formula $a[l:r]$
+\end_inset
+
+ randomly.
+ This would create a randomized quick sort algorithm, and on average its
+ running time is 
+\begin_inset Formula $O(n\lg n)$
+\end_inset
+
+.
+ It is important to note, that if we choose any pivot on random that splits
+ 
+\begin_inset Formula $a$
+\end_inset
+
+ into at least 
+\begin_inset Formula $25\%:75\%$
+\end_inset
+
+, then it is guaranteed that it would result in 
+\begin_inset Formula $O(n\lg n)$
+\end_inset
+
+ time.
+ This (or a better) split is called a 
+\series bold
+good split
+\series default
+.
+ In case of randomized algorithm, this split is achieved in most of the
+ cases.
+\end_layout
+
+\begin_layout Section
+The Problem of Selection
+\end_layout
+
+\begin_layout Standard
+In this problem, we are required to find 
+\begin_inset Formula $k$
+\end_inset
+
+th smallest element in 
+\begin_inset Formula $a[1:n]$
+\end_inset
+
+.
+ An easy way to do this would be run any sorting algorithm, and then return
+ 
+\begin_inset Formula $a[k]$
+\end_inset
+
+.
+ But this would take 
+\begin_inset Formula $O(n\lg n)$
+\end_inset
+
+ time at least.
+ Can we do better?
+\end_layout
+
+\begin_layout Subsection
+Hoare Select
+\end_layout
+
+\begin_layout Subsection*
+Using Hoare's Partition
+\end_layout
+
+\begin_layout Standard
+In Hoare's 
+\series bold
+partition
+\series default
+, we used to choose a pivot element and divide 
+\begin_inset Formula $a$
+\end_inset
+
+ into two parts based on the pivot.
+ What if the pivot we choose comes out to split 
+\begin_inset Formula $a$
+\end_inset
+
+ into 
+\begin_inset Formula $k-1$
+\end_inset
+
+ and 
+\begin_inset Formula $n-k$
+\end_inset
+
+ elements? Then, the pivot must be the 
+\begin_inset Formula $k$
+\end_inset
+
+th smallest element.
+ This is the main idea.
+ We may not be able to find out the suitable pivot for the desired split,
+ but we can try again on the reduced 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Hoare's Select}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Hoare-Select}{$a,n,k$}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State low = $1$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+State high = $n$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+While{(
+\backslash
+textbf{True})}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $j$ = 
+\backslash
+Call{Hoare-Partition}{$a$, low, high}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$k==j$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State 
+\backslash
+Return $a[j]$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+ElsIf{$k<j$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State high = $j-1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+Else
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State low = $j+1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Time Complexity of Hoare Select
+\end_layout
+
+\begin_layout Standard
+In the worst case, it can happen that 
+\begin_inset Formula $k=1$
+\end_inset
+
+ and we partition in such a way that we just remove the largest element
+ from 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Then it would take 
+\begin_inset Formula $n$
+\end_inset
+
+ iterations of the 
+\series bold
+while 
+\series default
+loop, and each iteration runs an instance of 
+\series bold
+Hoare Select
+\series default
+, so worst case 
+\begin_inset Formula $T(n)=n\cdot O(n)=O(n^{2})$
+\end_inset
+
+.
+ In the average case, we can say
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+T(n) & = & (\mbox{work done in \textbf{partition}})+(\mbox{average work done due to pivot chosen})\\
+ & = & O(n)+\mbox{average}((\mbox{case }k=j)\mbox{ or }(\mbox{case }k<j)\mbox{ or }(\mbox{case }k>j))\\
+ & = & O(n)+{\displaystyle \frac{1}{n}\sum_{j=1}^{n}\bigg\{ P(k=j)\cdot d+P(k<j)\cdot T(j-1)+P(k>j)\cdot T(n-j)\bigg\}}\\
+ & = & O(n)+{\displaystyle \frac{1}{n}\sum_{j=1}^{n}\bigg\{\frac{1}{n}\cdot d+\frac{j-1}{n}\cdot T(j-1)+\frac{n-j}{n}\cdot T(n-j)\bigg\}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is because the splits are based on 
+\begin_inset Formula $j$
+\end_inset
+
+ chosen, and 
+\begin_inset Formula $P(k=j)$
+\end_inset
+
+ is the probability that we choose the desired item across 
+\begin_inset Formula $n$
+\end_inset
+
+ items.
+ Similarly, 
+\begin_inset Formula $P(k<j)$
+\end_inset
+
+ is the probability that we choose a pivot 
+\begin_inset Formula $a[j]$
+\end_inset
+
+ such that it is greater than 
+\begin_inset Formula $k$
+\end_inset
+
+th smallest element.
+ Because for any 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $k$
+\end_inset
+
+ can assume only 
+\begin_inset Formula $j-1$
+\end_inset
+
+ such values, so 
+\begin_inset Formula $P(k<j)$
+\end_inset
+
+ is 
+\begin_inset Formula $(j-1)/n$
+\end_inset
+
+.
+ In the same way, 
+\begin_inset Formula $P(k>j)=(n-j)/n$
+\end_inset
+
+.
+ Using the notation 
+\begin_inset Formula $t(1:m)=1T(1)+2T(2)+\dotsb+mT(m)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+T(n) & \leq & cn+{\displaystyle \frac{1}{n^{2}}\sum_{j=1}^{n}\bigg\{ d+(j-1)\cdot T(j-1)+(n-j)T(n-j)\bigg\}}\\
+ & = & cn+{\displaystyle \frac{1}{n^{2}}\bigg\{ dn+2\cdot t(1:n-1)\bigg\}}\\
+ & = & cn+{\displaystyle \frac{d}{n}+\frac{2}{n^{2}}t(1:n-1)}\\
+ & = & cn+{\displaystyle \frac{d}{n}+\frac{2}{n^{2}}t(1:n-2)+\frac{2}{n^{2}}(n-1)T(n-1)}\\
+ & \leq & cn+{\displaystyle \frac{d}{n}+\frac{2}{n^{2}}t(1:n-2)+\frac{2(n-1)}{n^{2}}\bigg\{ c(n-1)+\frac{d}{n-1}+\frac{2}{(n-1)^{2}}t(1:n-2)\bigg\}}\\
+ & = & {\displaystyle cn+\frac{2c(n+1)}{n}\bigg\{\frac{(n-1)^{2}}{n(n+1)}\bigg\}+\frac{d}{n}+\frac{2d(n+1)}{n}\bigg\{\frac{1}{n(n+1)}\bigg\}+\frac{2(n+1)}{n}\bigg\{\frac{t(1:n-2)}{n(n-1)}\bigg\}}\\
+ & = & cn+{\displaystyle \frac{2c(n+1)}{n}\bigg\{\frac{(n-1)^{2}}{n(n+1)}+\frac{(n-2)^{2}}{(n-1)n}\bigg\}+\frac{d}{n}+\frac{2d(n+1)}{n}\bigg\{\frac{1}{n(n+1)}+\frac{1}{(n-1)n}\bigg\}}\\
+ &  & +\frac{2(n+1)}{n}\bigg\{\frac{t(1:n-3)}{(n-1)(n-2)}\bigg\}\\
+ & \vdots\\
+ & = & cn+{\displaystyle \frac{2c(n+1)}{n}\sum_{i=1}^{k}\frac{(n-i)^{2}}{(n-i+1)(n-i+2)}+\frac{d}{n}+\frac{2d(n+1)}{n}\sum_{i=1}^{k}\frac{1}{(n-i+1)(n-i+2)}}\\
+ &  & {\displaystyle +\frac{2(n+1)}{n}\bigg\{\frac{t(1:n-k-1)}{(n-k+1)(n-k)}\bigg\}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using 
+\begin_inset Formula $k=n-2$
+\end_inset
+
+ and 
+\begin_inset Formula $T(1)=1T(1)=t(1:1)=e$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+T(n) & = & cn+{\displaystyle \frac{2c(n+1)}{n}\sum_{i=1}^{n-2}\frac{(n-i)^{2}}{(n-i+1)(n-i+2)}+\frac{d}{n}+\frac{2d(n+1)}{n}\sum_{i=1}^{n-2}\frac{1}{(n-i+1)(n-i+2)}}\\
+ &  & {\displaystyle +\frac{2(n+1)}{n}\bigg\{\frac{t(1:1)}{3\cdot2}\bigg\}}\\
+ & = & {\displaystyle cn+\frac{2c(n+1)}{n}\sum_{i=1}^{n-2}\bigg\{1-\frac{1}{n-i+1}-\frac{2}{n-i+2}+\frac{2}{(n-i+1)(n-i+2)}\bigg\}}\\
+ &  & {\displaystyle +\frac{2d(n+1)}{n}\sum_{i=1}^{n-2}\frac{1}{(n-i+1)(n-i+2)}+\frac{(n+1)e}{3n}}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+T(n) & = & cn+{\displaystyle \frac{2c(n+1)}{n}\bigg\{(n-2)-\bigg(\frac{1}{3}+\dotsb+\frac{1}{n}\bigg)-2\bigg(\frac{1}{4}+\dotsb+\frac{1}{n+1}\bigg)\bigg\}}\\
+ &  & {\displaystyle +\frac{2(n+1)(2c+d)}{n}\sum_{i=1}^{n-2}\frac{1}{(n-i+1)(n-i+2)}+\frac{(n+1)e}{3n}}\\
+ & = & cn+{\displaystyle \frac{2c(n+1)}{n}\bigg\{(n-2)-\ln n-2\ln(n+1)+\bigg(1\cdot3+\frac{1}{2}\cdot3+\frac{1}{3}\cdot2+\frac{1}{4}\cdot2\bigg)\bigg\}}\\
+ &  & {\displaystyle \frac{2(n+1)(2c+d)}{n}\bigg\{\frac{1}{3}-\frac{1}{n+1}\bigg\}+\frac{(n+1)e}{3n}=O(n)}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, on average, 
+\series bold
+Hoare Select
+\series default
+ (also 
+\series bold
+quickselect
+\series default
+) takes 
+\begin_inset Formula $O(n)$
+\end_inset
+
+ time.
+\end_layout
+
+\begin_layout Subsection
+Selection Using Median of Medians
+\end_layout
+
+\begin_layout Standard
+In this technique, we divide the list 
+\begin_inset Formula $a$
+\end_inset
+
+ of size 
+\begin_inset Formula $n$
+\end_inset
+
+ into 
+\begin_inset Formula $g=\lfloor n/r\rfloor$
+\end_inset
+
+ groups of 
+\begin_inset Formula $r$
+\end_inset
+
+ elements each, leaving the extra elements.
+ For each of these groups we find the medians, say 
+\begin_inset Formula $m[1:g]$
+\end_inset
+
+ and then we find the median of these medians.
+ Then we do the usual selection by partitioning about this median of medians
+ as pivot.
+ In this way, we are guaranteed to have better than 
+\begin_inset Formula $25\%:75\%$
+\end_inset
+
+ split, thus we get a worst case 
+\begin_inset Formula $O(n)$
+\end_inset
+
+ time complexity.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Selection Using Median of Medians}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure{Median-of-Medians-Select}{$a,k,$ low, high}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+While{
+\backslash
+textbf{True}}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $n$ = high-low$+1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$n 
+\backslash
+leq r$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State 
+\backslash
+Call{Sort}{$a,$ low, high}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State 
+\backslash
+Return $a[k]$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+For{$i=1$ 
+\backslash
+textbf{to} $
+\backslash
+lfloor n/r 
+\backslash
+rfloor$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $m[i]$ = 
+\backslash
+Call{Median}{$a,$ low$+ri-r,$ low+$ri-1$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $v$ = 
+\backslash
+Call{Median-of-Medians-Select}{$m,
+\backslash
+lfloor 
+\backslash
+lfloor n/r 
+\backslash
+rfloor /2 
+\backslash
+rfloor,1,
+\backslash
+lfloor n/r 
+\backslash
+rfloor$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $j$ = 
+\backslash
+Call{Hoare-Partition}{$a$, low, high}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If{$k==j$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State 
+\backslash
+Return $a[j]$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+ElsIf{$k<j$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State high = $j-1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+Else
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State low = $j+1$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndWhile
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Worst case analysis can be proved using induction.
+\end_layout
+
+\begin_layout Problem
+Try to do selection using median of medians technique, but with insertion-sort.
+ Is the worst case time complexity the same?
+\end_layout
+
+\begin_layout Section
+Strassen's Matrix Multiplication Algorithm
+\end_layout
+
+\begin_layout Standard
+Matrix multiplication takes 
+\begin_inset Formula $O(n^{3})$
+\end_inset
+
+ time.
+ If two matrices are multiplied to give a third matrix (representative of
+ larger matrices) such that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{pmatrix}a & b\\
+c & d
+\end{pmatrix}\begin{pmatrix}e & f\\
+g & h
+\end{pmatrix}=\begin{pmatrix}u & v\\
+w & x
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+u & = & ae+bg\\
+v & = & af+bh\\
+w & = & ce+dg\\
+x & = & cf+gh
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It takes 
+\begin_inset Formula $8$
+\end_inset
+
+ multiplications to achieve this result.
+ So the time complexity of general matrix multiplication algorithm is 
+\begin_inset Formula $T(n)=8T(n/2)+O(n^{2})$
+\end_inset
+
+ where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the dimension of the matrices (both 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ each, without the loss of generality).
+ It takes 
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+ time to add the results, assuming it takes 
+\begin_inset Formula $O(1)$
+\end_inset
+
+ time to add.
+ Strassen formulated a method of matrix multiplication which reduced the
+ time complexity by a fractional power.
+ In his version, only 
+\begin_inset Formula $7$
+\end_inset
+
+ multiplications were needed.
+ Let us define some sums - 
+\begin_inset Formula 
+\begin{eqnarray*}
+S_{1} & = & f-h\\
+S_{2} & = & a+b\\
+S_{3} & = & c+d\\
+S_{4} & = & g-e\\
+S_{5} & = & a+d\\
+S_{6} & = & e+h\\
+S_{7} & = & b-d\\
+S_{8} & = & g+h\\
+S_{9} & = & a-c\\
+S_{10} & = & e+f
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then the 
+\begin_inset Formula $7$
+\end_inset
+
+ products accordingly, as given by Strassen are - 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+P_{1} & = & a\cdot S_{1}=a(f-h)\\
+P_{2} & = & h\cdot S_{2}=h(a+b)\\
+P_{3} & = & e\cdot S_{3}=e(c+d)\\
+P_{4} & = & d\cdot S_{4}=d(g-e)\\
+P_{5} & = & S_{5}\cdot S_{6}=(a+d)(e+h)\\
+P_{6} & = & S_{7}\cdot S_{8}=(b-d)(g+h)\\
+P_{7} & = & S_{9}\cdot S_{10}=(a-c)(e+f)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using these products, the terms become
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+u & = & ae+bg=P_{4}+P_{5}+P_{6}-P_{2}\\
+v & = & af+bh=P_{1}+P_{2}\\
+w & = & ce+dg=P_{3}+P_{4}\\
+x & = & cf+dh=P_{1}-P_{3}+P_{5}-P_{7}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The time complexity of matrix multiplication using this scheme becomes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T(n)=7T(n/2)+O(n^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It can be checked by substitution that this recurrence relation gives us
+ a time complexity 
+\begin_inset Formula $T(n)=O(n^{\lg7})=O(n^{2.807})$
+\end_inset
+
+.
+ This algorithm holds for non square matrices as well.
+ However, Strassen's algorithm is not preferred over the general method.
+ This is because the constant 
+\begin_inset Formula $c$
+\end_inset
+
+ in its worst case time complexity is significantly more than the naive
+ multiplication algorithm.
+ Moreover, it consumes more space.
 \end_layout
 
 \end_body
