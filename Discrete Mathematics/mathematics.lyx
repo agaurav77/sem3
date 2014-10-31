@@ -4,6 +4,11 @@
 \begin_header
 \textclass book
 \use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -24,6 +29,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize 12
 \spacing single
 \use_hyperref false
@@ -81,7 +87,7 @@ Logic
 Logic in the General Sense
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Proposition
 \end_layout
 
@@ -89,17 +95,3720 @@ Proposition
 It is a declarative sentence that declares a fact (i.e.
  a 
 \series bold
-True 
+True[T] 
 \series default
 or 
 \series bold
-False
+False[F]
 \series default
  statement).
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Propositional Calculus
+\end_layout
+
+\begin_layout Standard
+To represent statements in propositional calculus (i.e.
+ propositions) we use 
+\series bold
+propositional variables
+\series default
+.
+ Eg.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P(x):$
+\end_inset
+
+ Ram is 
+\begin_inset Formula $x$
+\end_inset
+
+ years old.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Q(x):$
+\end_inset
+
+ Shyam is not 
+\begin_inset Formula $x$
+\end_inset
+
+ years old.
+\end_layout
+
+\begin_layout Subsection*
+Logical Connectives or Operators
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Negation
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+If 
+\begin_inset Formula $p$
+\end_inset
+
+ is a proposition, then the negation of 
+\begin_inset Formula $p$
+\end_inset
+
+ is denoted by 
+\begin_inset Formula $\neg p$
+\end_inset
+
+.
+ It conveys the opposite meaning of 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ For example, if 
+\begin_inset Formula $p$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+Ram is a good boy
+\begin_inset Quotes erd
+\end_inset
+
+, then 
+\begin_inset Formula $\neg p$
+\end_inset
+
+ says 
+\begin_inset Quotes eld
+\end_inset
+
+Ram is not a good boy
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\neg p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Conjunction
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+If 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are two propositions then the conjuction of 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ is denoted by 
+\begin_inset Formula $p\wedge q$
+\end_inset
+
+ (said 
+\begin_inset Formula $p$
+\end_inset
+
+ AND 
+\begin_inset Formula $q$
+\end_inset
+
+, sometimes 
+\begin_inset Formula $p$
+\end_inset
+
+ BUT 
+\begin_inset Formula $q$
+\end_inset
+
+).
+ For example, if 
+\begin_inset Formula $p$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+It is sunny
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+It is cold
+\begin_inset Quotes erd
+\end_inset
+
+, then 
+\begin_inset Formula $p\wedge q$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+It is sunny but cold
+\begin_inset Quotes erd
+\end_inset
+
+ (two statements here in contrasting sense).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\wedge q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Disjunction
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+If 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are two propositions then the disjunction of 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ can be of two types -
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Inclusive OR
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+It means the simple OR, i.e.
+ 
+\series bold
+True
+\series default
+ if any of the operands is 
+\series bold
+True
+\series default
+.
+ It is written as 
+\begin_inset Formula $p\vee q$
+\end_inset
+
+ (said 
+\begin_inset Formula $p$
+\end_inset
+
+ OR 
+\begin_inset Formula $q$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\vee q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Exclusive OR
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+It is 
+\series bold
+True
+\series default
+ if odd number of operands is 
+\series bold
+True
+\series default
+.
+ It resembles the symmetric difference of sets in set theory.
+ It is written as 
+\begin_inset Formula $p\oplus q$
+\end_inset
+
+ (said 
+\begin_inset Formula $p$
+\end_inset
+
+ XOR 
+\begin_inset Formula $q$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\oplus q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Conditional
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+If 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are two propositions, then 
+\begin_inset Formula $p\rightarrow q$
+\end_inset
+
+ is called the conditional, meaning 
+\begin_inset Quotes eld
+\end_inset
+
+if 
+\begin_inset Formula $p$
+\end_inset
+
+ then 
+\begin_inset Formula $q$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Here 
+\begin_inset Formula $p$
+\end_inset
+
+ is the 
+\series bold
+hypothesis
+\series default
+ or premise or antecedant, and 
+\begin_inset Formula $q$
+\end_inset
+
+ is the 
+\series bold
+conclusion
+\series default
+ or consequent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\rightarrow q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Biconditional
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+It is also called bi-implication or equivalence.
+ If 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are two propositions, then 
+\begin_inset Formula $p\leftrightarrow q$
+\end_inset
+
+ is called the biconditional, and it says 
+\begin_inset Quotes eld
+\end_inset
+
+p if and only if 
+\begin_inset Formula $q$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+p\leftrightarrow q\equiv(p\rightarrow q)\wedge(q\rightarrow p)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\leftrightarrow q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Statements associated with Conditionals
+\end_layout
+
+\begin_layout Standard
+In general, for the conditional 
+\begin_inset Formula $p\rightarrow q$
+\end_inset
+
+, three more statements can be formed by changing the hypothesis and conclusion.
+\end_layout
+
+\begin_layout Itemize
+Converse 
+\begin_inset Formula $q\rightarrow p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Inverse 
+\begin_inset Formula $\neg p\rightarrow\neg q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Contrapositive 
+\begin_inset Formula $\neg q\rightarrow\neg p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\rightarrow q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q\rightarrow p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\neg p\rightarrow\neg q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\neg q\rightarrow\neg p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So, the conditional is equivalent to the contrapositive, and the converse
+ is equivalent to inverse.
+\end_layout
+
+\begin_layout Section
+Propositional Equivalences
+\end_layout
+
+\begin_layout Subsection*
+Tautology
+\end_layout
+
+\begin_layout Standard
+A proposition that is always true is a tautology.
+\end_layout
+
+\begin_layout Subsection*
+Contradiction
+\end_layout
+
+\begin_layout Standard
+A proposition that is always false is a contradiction.
+\end_layout
+
+\begin_layout Subsection*
+Contingency
+\end_layout
+
+\begin_layout Standard
+A proposition that is never always false or always true is called a contingency.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<column alignment="center" valignment="top" width="20col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\neg p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\wedge\neg p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\vee\neg p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here 
+\begin_inset Formula $p\wedge\neg p$
+\end_inset
+
+ is a contradiction, whereas 
+\begin_inset Formula $p\vee\neg p$
+\end_inset
+
+ is a tautology.
+\end_layout
+
+\begin_layout Subsection*
+Equivalence of Propositions
+\end_layout
+
+\begin_layout Standard
+Two compound propositions 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ are called equivalent (i.e.
+ 
+\begin_inset Formula $p\equiv q$
+\end_inset
+
+) if 
+\begin_inset Formula $p\leftrightarrow q$
+\end_inset
+
+ is a tautology.
+ 
+\end_layout
+
+\begin_layout Problem*
+Using truth tables, verify the logical equivalences of these propositions
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\neg(p\wedge q)\equiv\neg p\vee\neg q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\neg(p\vee q)\equiv\neg p\wedge\neg q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $p\rightarrow q\equiv\neg p\vee q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\wedge q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\neg(p\wedge q)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\neg p\vee\neg q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\vee q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\neg(p\vee q)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\neg p\wedge\neg q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<column alignment="center" valignment="top" width="10col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\rightarrow q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\neg p\vee q$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Laws of Logical Equivalences
+\end_layout
+
+\begin_layout Description
+Identity
+\begin_inset space ~
+\end_inset
+
+Law 
+\begin_inset Formula $p\wedge\mbox{T}\equiv p$
+\end_inset
+
+, 
+\begin_inset Formula $p\vee\mbox{F}\equiv p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Domination
+\begin_inset space ~
+\end_inset
+
+Law 
+\begin_inset Formula $p\vee\mbox{T}\equiv\mbox{T}$
+\end_inset
+
+, 
+\begin_inset Formula $p\wedge\mbox{F}\equiv\mbox{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Idempotent
+\begin_inset space ~
+\end_inset
+
+Law 
+\begin_inset Formula $p\vee p\equiv p$
+\end_inset
+
+, 
+\begin_inset Formula $p\wedge p\equiv p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Double
+\begin_inset space ~
+\end_inset
+
+Negation
+\begin_inset space ~
+\end_inset
+
+Law 
+\begin_inset Formula $\neg(\neg p)=p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Commutativity 
+\begin_inset Formula $p\vee q\equiv q\vee p$
+\end_inset
+
+, 
+\begin_inset Formula $p\wedge q\equiv q\wedge p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Associativity 
+\begin_inset Formula $p\vee(q\vee r)\equiv(p\vee q)\vee r$
+\end_inset
+
+, 
+\begin_inset Formula $p\wedge(q\wedge r)\equiv(p\wedge q)\wedge r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Distributivity 
+\begin_inset Formula $p\vee(q\wedge r)\equiv(p\vee q)\wedge(p\vee r)$
+\end_inset
+
+, 
+\begin_inset Formula $p\wedge(q\vee r)\equiv(p\wedge q)\vee(p\wedge r)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+De
+\begin_inset space ~
+\end_inset
+
+Morgan
+\begin_inset space ~
+\end_inset
+
+Laws 
+\begin_inset Formula $\neg(p\wedge q)\equiv\neg p\vee\neg q$
+\end_inset
+
+, 
+\begin_inset Formula $\neg(p\vee q)\equiv\neg p\wedge\neg q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Absorption 
+\begin_inset Formula $p\vee(q\wedge p)\equiv p$
+\end_inset
+
+, 
+\begin_inset Formula $p\wedge(q\vee p)\equiv p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Negation 
+\begin_inset Formula $p\wedge\neg p\equiv\mbox{F}$
+\end_inset
+
+, 
+\begin_inset Formula $p\vee\neg p\equiv\mbox{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p\rightarrow q\equiv\neg p\vee q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p\leftrightarrow q\equiv(p\rightarrow q)\wedge(q\rightarrow p)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Duality
+\end_layout
+
+\begin_layout Standard
+Two logical expressions are called 
+\series bold
+dual
+\series default
+ of each other if either one of them can be obtained from the other by replacing
+ conjunctions with disjunctions and disjunctions with conjunctions.
+\end_layout
+
+\begin_layout Problem*
+Without constructing the truth table, show 
+\begin_inset Formula $\neg(p\rightarrow q)$
+\end_inset
+
+ and 
+\begin_inset Formula $p\wedge\neg q$
+\end_inset
+
+ are equivalent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{flalign*}
+\neg(p\rightarrow q) & \equiv\neg(\neg p\vee q)\\
+ & \equiv\neg(\neg p)\wedge\neg(q) & \mbox{De Morgan Laws}\\
+ & \equiv p\wedge\neg q & \mbox{Double Negation Law}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem*
+Show that 
+\begin_inset Formula $\neg(p\vee(\neg p\wedge q))$
+\end_inset
+
+ and 
+\begin_inset Formula $\neg p\wedge\neg q$
+\end_inset
+
+ are logically equivalent, through a series of logical equivalences.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{flalign*}
+\neg(p\vee(\neg p\wedge q)) & \equiv\neg((p\vee\neg p)\wedge(p\vee q)) & \mbox{Distributivity}\\
+ & \equiv\neg(\mbox{T}\wedge(p\vee q)) & \mbox{Negation}\\
+ & \equiv\neg(p\vee q) & \mbox{Identity}\\
+ & \equiv\neg p\vee\neg q & \mbox{De Morgan Laws}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Problem*
+Show that 
+\begin_inset Formula $(p\wedge q)\rightarrow(p\vee q)$
+\end_inset
+
+ is a tautology, without using truth tables.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{flalign*}
+(p\wedge q)\rightarrow(p\vee q) & \equiv(\neg(p\wedge q))\vee(p\vee q)\\
+ & \equiv(\neg p\vee\neg q)\vee(p\vee q) & \mbox{De Morgan Laws}\\
+ & \equiv(p\vee\neg p)\vee(q\vee\neg q) & \mbox{Associativity}\\
+ & \equiv(\mbox{T}\vee\mbox{T}) & \mbox{Negation}\\
+ & \equiv\mbox{T}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Show without using truth tables
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\neg(p\wedge q)\rightarrow(\neg p\vee(\neg p\vee q))\equiv\neg p\vee q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(p\vee q)\wedge(\neg p\wedge(\neg p\wedge q))\equiv\neg p\wedge q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Hint: 
+\series default
+Just prove the first, and second follows by duality.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+Normal or Canonical Forms
+\end_layout
+
+\begin_layout Standard
+Sometimes we need to prove the equivalences of two compound propositions
+ 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+, and it seems difficult.
+ Then we use an alternative strategy.
+ We convert 
+\begin_inset Formula $p$
+\end_inset
+
+ to 
+\begin_inset Formula $p^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ to 
+\begin_inset Formula $q^{*}$
+\end_inset
+
+.
+ Then we prove that 
+\begin_inset Formula $p^{*}\equiv q^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Elementary
+\begin_inset space ~
+\end_inset
+
+Product A combination of propositional variables and their negations using
+ disjunctions.
+\end_layout
+
+\begin_layout Description
+Elementary
+\begin_inset space ~
+\end_inset
+
+Sum A combination of propositional variables and their negations using conjuncti
+ons
+\end_layout
+
+\begin_layout Enumerate
+An elementary sum is identically 
+\series bold
+True
+\series default
+ or tautology if it contains at least one pair of factors in which one is
+ the negation of other.
+\end_layout
+
+\begin_layout Enumerate
+An elementary sum is identically 
+\series bold
+False
+\series default
+ or contradiction if it contains at least one pair of factors in which one
+ is the negation of other.
+\end_layout
+
+\begin_layout Subsection*
+Disjunctive Normal Form (DNF)
+\end_layout
+
+\begin_layout Standard
+It is the combination of elementary products using conjunction only.
+\end_layout
+
+\begin_layout Subsection*
+Conjunctive Normal Form (CNF)
+\end_layout
+
+\begin_layout Standard
+It is the combination of elementary sums using disjunction only.
+\end_layout
+
+\begin_layout Subsection*
+Principal DNF
+\end_layout
+
+\begin_layout Standard
+For a given formula, an equivalent formula with sums or disjunctions of
+ the minterms (elementary products with each variable occuring exactly once)
+ is called the principal CNF.
+ It is also called the sum of products form.
+ For example, for three propositional variables 
+\begin_inset Formula $p$
+\end_inset
+
+, 
+\begin_inset Formula $q$
+\end_inset
+
+ and 
+\begin_inset Formula $r$
+\end_inset
+
+ the possible minterms are
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p\wedge q\wedge r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p\wedge q\wedge\neg r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p\wedge\neg q\wedge r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p\wedge\neg q\wedge\neg r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\neg p\wedge q\wedge r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\neg p\wedge q\wedge\neg r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\neg p\wedge\neg q\wedge r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\neg p\wedge\neg q\wedge\neg r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Principal CNF
+\end_layout
+
+\begin_layout Standard
+For a given formula, an equivalent formula with products or conjunctions
+ of the maxterms (elementary sums with each variable occurring exactly once)
+ is called the principal DNF.
+ It is also called the product of sums form.
+ The maxterms are the same as the minterms in representation except for
+ the fact that disjunctions are used.
+\end_layout
+
+\begin_layout Subsection*
+Properties
+\end_layout
+
+\begin_layout Itemize
+No two minterms are equivalent.
+ The same holds for maxterms.
+\end_layout
+
+\begin_layout Itemize
+If the formula is a tautology, then all the minterms are present in the
+ principal DNF form.
+\end_layout
+
+\begin_layout Itemize
+For a contradiction, principal CNF form has all the maxterms.
+\end_layout
+
+\begin_layout Itemize
+Note that maxterms are duals of minterms.
+\end_layout
+
+\begin_layout Subsection*
+Conversion of Expression to Principal DNF without Truth Tables
+\end_layout
+
+\begin_layout Enumerate
+Replace 
+\begin_inset Formula $p\rightarrow q$
+\end_inset
+
+ with 
+\begin_inset Formula $\neg p\vee q$
+\end_inset
+
+ and 
+\begin_inset Formula $p\leftrightarrow q$
+\end_inset
+
+ with 
+\begin_inset Formula $(\neg p\vee q)\wedge(\neg q\vee p)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Use De Morgan Laws and Distributivity.
+\end_layout
+
+\begin_layout Enumerate
+Drop any elementary product which is a contradiction.
+\end_layout
+
+\begin_layout Enumerate
+Introduce the missing factors if necessary.
+\end_layout
+
+\begin_layout Enumerate
+Repeated terms, if any are replaced with a single instance of that term.
+\end_layout
+
+\begin_layout Standard
+For example, let us consider 
+\begin_inset Formula $p\rightarrow q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{flalign*}
+p\rightarrow q & \equiv\neg p\vee q\\
+ & \equiv(\neg p\wedge\mbox{T})\vee(q\wedge\mbox{T}) & \mbox{Identity Law}\\
+ & \equiv(\neg p\wedge(q\vee\neg q))\vee(q\wedge(p\vee\neg p)) & \mbox{Negation Law}\\
+ & \equiv(\neg p\wedge q)\vee(\neg p\wedge\neg q)\vee(q\wedge p)\vee(q\wedge\neg p) & \mbox{Distributivity}\\
+ & \equiv(\neg p\wedge q)\vee(\neg p\wedge\neg q)\vee(p\wedge q)\vee(\neg p\wedge q) & \mbox{Commutativity}\\
+ & \equiv(\neg p\wedge q)\vee(\neg p\wedge\neg q)\vee(p\wedge q) & \mbox{Idempotent Law}
+\end{flalign*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise*
+Obtain the principal DNF of 
+\begin_inset Formula $(p\wedge q)\vee(\neg p\wedge r)\vee(q\wedge r)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Conversion of Expression from Principal DNF to Principal CNF
+\end_layout
+
+\begin_layout Standard
+If the principal DNF of a formula is given, then the principal CNF can be
+ found out by finding the disjunction of minterms which do not appear in
+ the DNF, and converting it to its dual.
+ For example, for 
+\begin_inset Formula $p\rightarrow q$
+\end_inset
+
+, the principal DNF doesnt have 
+\begin_inset Formula $p\wedge\neg q$
+\end_inset
+
+ (only one term), so its principal CNF is just 
+\begin_inset Formula $p\vee\neg q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Exercise*
+Obtain the principal DNF and then principal CNF of
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(\neg p\rightarrow r)\wedge(q\leftrightarrow p)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $p\rightarrow(p\wedge(q\rightarrow p))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Predicates and Quantifiers
+\end_layout
+
+\begin_layout Subsection*
+Predicates
+\end_layout
+
+\begin_layout Standard
+They are that part of a declarative sentence or proposition that describe
+ some property of the subject.
+\end_layout
+
+\begin_layout Subsection*
+Quantifiers
+\end_layout
+
+\begin_layout Standard
+Quantifiers express the extent to which a predicate is 
+\series bold
+True 
+\series default
+over a range of elements.
+ In general, quantifiers have a higher precedence than other connectives.
+\end_layout
+
+\begin_layout Subsection*
+Universal Quantification
+\end_layout
+
+\begin_layout Standard
+The universal quantification of a statement 
+\begin_inset Formula $P(x)$
+\end_inset
+
+ says 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $P(x)$
+\end_inset
+
+ is 
+\series bold
+True
+\series default
+ for all 
+\begin_inset Formula $x$
+\end_inset
+
+ in the domain of disclosure
+\begin_inset Quotes erd
+\end_inset
+
+.
+ It is written as 
+\begin_inset Formula $\forall x,P(x)$
+\end_inset
+
+ (said 
+\begin_inset Quotes eld
+\end_inset
+
+for all 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $P(x)$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+).
+ So, if the domain of disclosure is 
+\begin_inset Formula $\{x_{1},x_{2}\dotsb x_{n}\}$
+\end_inset
+
+ then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall x,P(x)\equiv P(x_{1})\wedge P(x_{2})\wedge\dotsb\wedge P(x_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Existential Quantification
+\end_layout
+
+\begin_layout Standard
+This says 
+\begin_inset Quotes eld
+\end_inset
+
+there exists an element 
+\begin_inset Formula $x$
+\end_inset
+
+ in the domain of disclosure such that 
+\begin_inset Formula $P(x)$
+\end_inset
+
+ is 
+\series bold
+True
+\series default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ It is written as 
+\begin_inset Formula $\exists x,P(x)$
+\end_inset
+
+ (said 
+\begin_inset Quotes eld
+\end_inset
+
+there is some 
+\begin_inset Formula $x$
+\end_inset
+
+ for which 
+\begin_inset Formula $P(x)$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+).
+ If the domain of disclosure is 
+\begin_inset Formula $\{x_{1},x_{2}\dotsb x_{n}\}$
+\end_inset
+
+ then 
+\begin_inset Formula 
+\[
+\exists x,P(x)\equiv P(x_{1})\vee P(x_{2})\vee\dotsb\vee P(x_{n})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Bound and Free Variables
+\end_layout
+
+\begin_layout Standard
+Any variable which appears in a quantifier is called bound.
+ That which doesn't appear in any quantifier is called a free variable.
+ For example, in 
+\begin_inset Formula $\exists x,(x+y=1)$
+\end_inset
+
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ is a bound variable where as 
+\begin_inset Formula $y$
+\end_inset
+
+ is a free variable.
+\end_layout
+
+\begin_layout Subsection*
+Laws of Quantified Statements
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall x,(P(x)\wedge Q(x))\equiv(\forall x,P(x))\wedge(\forall x,Q(x))$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+However, 
+\begin_inset Formula $\forall x,(P(x)\vee Q(x))\neq(\forall x,P(x))\vee(\forall x,Q(x))$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\exists x,(P(x)\wedge Q(x))\neq(\exists x,P(x))\wedge(\exists x,Q(x))$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+However, 
+\begin_inset Formula $\exists x,(P(x)\vee Q(x))\equiv(\exists x,P(x))\vee(\exists x,Q(x))$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Both 
+\begin_inset Formula $\neg(\forall x,P(x))\equiv\forall x,(\neg P(x))$
+\end_inset
+
+ and 
+\begin_inset Formula $\neg(\exists x,P(x))\equiv\exists x,(\neg P(x))$
+\end_inset
+
+ hold.
+\end_layout
+
+\begin_layout Exercise*
+Construct the negatives of 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+There exists an honest politician
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes eld
+\end_inset
+
+All Indians like mangoes
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example*
+Translate the statement 
+\begin_inset Quotes eld
+\end_inset
+
+the sum of two positive integers is always positive
+\begin_inset Quotes erd
+\end_inset
+
+ into a logical expression using quantifiers.
+\end_layout
+
+\begin_layout Standard
+Let the domain of disclosure be the set of integers 
+\begin_inset Formula $\mathbf{I}$
+\end_inset
+
+ (or positive integers 
+\begin_inset Formula $\mathbf{I^{+}}$
+\end_inset
+
+).
+ Then the statement translates to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall x\forall y,((x>0)\wedge(y>0)\rightarrow(x+y>0))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example*
+Translate the statement 
+\begin_inset Quotes eld
+\end_inset
+
+every real number except 
+\begin_inset Formula $0$
+\end_inset
+
+ has a multiplicative inverse
+\begin_inset Quotes erd
+\end_inset
+
+ into a logical expression using quantifiers.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Here the domain of disclosure is 
+\series bold
+R
+\series default
+.
+ The statement becomes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall x,((x\neq0)\rightarrow(\exists y,(x\cdot y=1)))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
