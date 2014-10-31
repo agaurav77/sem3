@@ -3807,7 +3807,1551 @@ R
 
 \end_layout
 
+\begin_layout Chapter
+Mathematical Reasoning
+\end_layout
+
+\begin_layout Section
+Validity of Arguments
+\end_layout
+
+\begin_layout Subsection*
+Argument
+\end_layout
+
 \begin_layout Standard
+An argument is a sequence of hypotheses or propositions followed by a conclusion.
+ For example,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & \mbox{If it snows today, we'll go for skiing.}\\
+(2) & \mbox{It is snowing today.}\\
+\therefore & \mbox{We'll go for skiing.}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Explanation of Validity
+\end_layout
+
+\begin_layout Standard
+By validity of arguments, we mean that the conclusion must follow from the
+ preceding statements.
+ An argument is called 
+\series bold
+valid
+\series default
+ if the truth of all the hypotheses imply that the conclusion is 
+\series bold
+True
+\series default
+.
+ An argument with premises 
+\begin_inset Formula $p_{1},p_{2}\dotsb p_{n}$
+\end_inset
+
+ and conclusion 
+\begin_inset Formula $q$
+\end_inset
+
+ is valid therefore if
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p_{1}\wedge p_{2}\wedge\dotsb\wedge p_{n}\rightarrow q
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An invalid argument is called a 
+\series bold
+fallacy
+\series default
+.
+ To check the validity of an argument without the truth tables, we use the
+ rules of inferences.
+\end_layout
+
+\begin_layout Section
+Rules of Inferences
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Law of Detachment 
+\series default
+or 
+\series bold
+Modus Ponens
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & p\\
+(2) & p\rightarrow q\\
+\therefore & q
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Law of Contraposition
+\series default
+ or 
+\series bold
+Modus Tollens
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & \neg q\\
+(2) & p\rightarrow q\\
+\therefore & \neg p
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Disjunctive Syllogism
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & \neg p\\
+(2) & p\vee q\\
+\therefore & q
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Hypothetical Syllogism
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & p\rightarrow q\\
+(2) & q\rightarrow r\\
+\therefore & p\rightarrow r
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Addition
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & p\\
+\therefore & p\vee q
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Simplification
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & p\wedge q\\
+\therefore & p
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Conjunction
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & p\\
+(2) & q\\
+\therefore & p\wedge q
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Resolution
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & p\vee q\\
+(2) & p\rightarrow r\\
+\therefore & q\vee r
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Problem*
+Show the validity of the following argument.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & \mbox{If Ravi gets the job and works hard, he will be promoted.}\\
+(2) & \mbox{If Ravi gets promotion, he will be happy.}\\
+(3) & \mbox{He will not be happy.}\\
+\therefore & \mbox{He will not get the job or he will not work hard.}
+\end{eqnarray*}
+
+\end_inset
+
+Let us denote some simple statements throught propositions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(p) & \mbox{Ravi gets the job.}\\
+(q) & \mbox{Ravi works hard.}\\
+(r) & \mbox{Ravi will be promoted.}\\
+(s) & \mbox{Ravi will be happy.}
+\end{eqnarray*}
+
+\end_inset
+
+Using these propositions, the original argument becomes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & p\wedge q\rightarrow r\\
+(2) & r\rightarrow s\\
+(3) & \neg s\\
+\therefore & \neg p\vee\neg q
+\end{eqnarray*}
+
+\end_inset
+
+Using hypothetical syllogism, 
+\begin_inset Formula $(1)$
+\end_inset
+
+ and 
+\begin_inset Formula $(2)$
+\end_inset
+
+ combine to 
+\begin_inset Formula $(4)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(4) & p\wedge q\rightarrow s
+\end{eqnarray*}
+
+\end_inset
+
+Using Modus Tollens, 
+\begin_inset Formula $(3)$
+\end_inset
+
+ and 
+\begin_inset Formula $(4)$
+\end_inset
+
+ combine to (5)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+(5) & \neg(p\wedge q)
+\end{eqnarray*}
+
+\end_inset
+
+This is equivalent to the conclusion, by De Morgan Laws.
+\end_layout
+
+\begin_layout Problem*
+Show the validity of the following argument.
+\end_layout
+
+\begin_layout Problem*
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & \mbox{It is not sunny and it is colder than yesterday.}\\
+(2) & \mbox{If we go for walking, then it's sunny.}\\
+(3) & \mbox{If we do not go for walking, then we will take a long drive.}\\
+(4) & \mbox{If we take a long drive, we will be home by sunset.}\\
+\therefore & \mbox{We will be home by sunset.}
+\end{eqnarray*}
+
+\end_inset
+
+The simple propositions for this argument are
+\end_layout
+
+\begin_layout Problem*
+\begin_inset Formula 
+\begin{eqnarray*}
+(p) & \mbox{It is sunny.}\\
+(q) & \mbox{It is colder than yesterday.}\\
+(r) & \mbox{We go for walking.}\\
+(s) & \mbox{We take a long drive.}\\
+(t) & \mbox{We will be home by sunset.}
+\end{eqnarray*}
+
+\end_inset
+
+Using these simple propositions, the original argument becomes
+\end_layout
+
+\begin_layout Problem*
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & \neg p\wedge q\\
+(2) & r\rightarrow p\\
+(3) & \neg r\rightarrow s\\
+(4) & s\rightarrow t\\
+\therefore & t
+\end{eqnarray*}
+
+\end_inset
+
+By hypothetical syllogism, 
+\begin_inset Formula $(3)$
+\end_inset
+
+ and 
+\begin_inset Formula $(4)$
+\end_inset
+
+ give 
+\begin_inset Formula $(5)$
+\end_inset
+
+ and by simplification 
+\begin_inset Formula $(1)$
+\end_inset
+
+ gives 
+\begin_inset Formula $(6)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem*
+\begin_inset Formula 
+\begin{eqnarray*}
+(5) & \neg r\rightarrow t\\
+(6) & \neg p
+\end{eqnarray*}
+
+\end_inset
+
+Using Modus Tollens on 
+\begin_inset Formula $(6)$
+\end_inset
+
+ and 
+\begin_inset Formula $(2)$
+\end_inset
+
+, we get 
+\begin_inset Formula $(7)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem*
+\begin_inset Formula 
+\begin{eqnarray*}
+(7) & \neg r
+\end{eqnarray*}
+
+\end_inset
+
+By Modus Ponens on 
+\begin_inset Formula $(7)$
+\end_inset
+
+ and 
+\begin_inset Formula $(5)$
+\end_inset
+
+, we get 
+\begin_inset Formula $(8)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Problem*
+\begin_inset Formula 
+\begin{eqnarray*}
+(8) & t
+\end{eqnarray*}
+
+\end_inset
+
+But 
+\begin_inset Formula $t$
+\end_inset
+
+ is the conclusion.
+ Hence the argument is valid.
+\end_layout
+
+\begin_layout Exercise*
+Prove that the argument given below is valid, without using truth tables.
+\end_layout
+
+\begin_layout Exercise*
+\begin_inset Formula 
+\begin{eqnarray*}
+(1) & p\vee(q\rightarrow p)\\
+(2) & \neg p\wedge r\\
+\therefore & \neg q
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Methods of Proof
+\end_layout
+
+\begin_layout Description
+Proof A proof is a valid argument that establishes the truth of any mathematical
+ statement.
+\end_layout
+
+\begin_layout Description
+Theorem A theorem is the universal quantification of a mathematical statement
+ (generally conditionals) with one or more premises and a conclusion.
+\end_layout
+
+\begin_layout Description
+Proposition Less important theorems are called propositions.
+\end_layout
+
+\begin_layout Description
+Axiom Assumed statements are called axioms.
+\end_layout
+
+\begin_layout Description
+Lemma A lemma is a less important theorem helpful in the proof of other
+ theorems or results.
+\end_layout
+
+\begin_layout Description
+Corollary A corollary is the result or a theorem directly established from
+ another proved theorem.
+\end_layout
+
+\begin_layout Subsection*
+Techniques of Proof
+\end_layout
+
+\begin_layout Standard
+Generally proofs are done directly or indirectly.
+\end_layout
+
+\begin_layout Description
+Direct In direct proofs, hypotheses are assumed 
+\series bold
+True
+\series default
+ and with axioms, definitions and rules of inferences etc.
+ we try to prove that the conclusion is also 
+\series bold
+True
+\series default
+.
+\end_layout
+
+\begin_layout Description
+Indirect We try and prove the contrapositive of the conclusion, or use contradic
+tion.
+\end_layout
+
+\begin_layout Standard
+We start with the negation of the conclusion or a negation of the hypotheses
+ and reach a logical contradiction.
+ If the premises are 
+\begin_inset Formula $p=p_{1}\wedge\dotsb\wedge p_{n}$
+\end_inset
+
+ then we try to prove in contradiction method, that 
+\begin_inset Formula $p\wedge\neg q$
+\end_inset
+
+ is 
+\series bold
+True
+\series default
+ (and reach a contradiction).
+ This is because
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p\wedge\neg q\equiv\neg(\neg p\vee q)\equiv\neg(p\rightarrow q)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Give a direct proof of the statement 
+\begin_inset Quotes eld
+\end_inset
+
+if 
+\begin_inset Formula $n$
+\end_inset
+
+ is an even integer, then 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ is also an even integer
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $n$
+\end_inset
+
+ is even, then 
+\begin_inset Formula $\exists k,n=2k$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $n^{2}=(2k)^{2}=4k^{2}\equiv0\mod2$
+\end_inset
+
+.
+ Hence for even 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ is also even.
+\end_layout
+
+\begin_layout Example
+Prove that if 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ is an odd integer, then 
+\begin_inset Formula $n$
+\end_inset
+
+ is also odd.
+\end_layout
+
+\begin_layout Standard
+Let us solve this by contradiction.
+ Let 
+\begin_inset Formula $p$
+\end_inset
+
+ be 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ is odd
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ be 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $n$
+\end_inset
+
+ is odd
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Then we start with 
+\begin_inset Formula $p\wedge\neg q$
+\end_inset
+
+.
+ So, let us assume that 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ is odd and 
+\begin_inset Formula $n$
+\end_inset
+
+ is even.
+ Because 
+\begin_inset Formula $n$
+\end_inset
+
+ is even, we can assume 
+\begin_inset Formula $\exists k,n=2k$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $n^{2}=4k^{2}\equiv0\mod2$
+\end_inset
+
+.
+ But because 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ is odd, so it should be that 
+\begin_inset Formula $n^{2}\equiv1\mod2$
+\end_inset
+
+.
+ Thus we reached a contradiction.
+ Hence the opposite must be 
+\series bold
+True
+\series default
+, i.e.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+if 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ were odd, then 
+\begin_inset Formula $n$
+\end_inset
+
+ must be odd
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Using contradiction, prove that 
+\begin_inset Formula $\sqrt{2}$
+\end_inset
+
+ is irrational.
+\end_layout
+
+\begin_layout Standard
+Let us assume that on the contrary, 
+\begin_inset Formula $\sqrt{2}$
+\end_inset
+
+ is rational.
+ Then by the definition of rational numbers, for 
+\begin_inset Formula $2$
+\end_inset
+
+ co-primes 
+\begin_inset Formula $p,q$
+\end_inset
+
+ (
+\begin_inset Formula $q\neq0$
+\end_inset
+
+) we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{2}=\frac{p}{q}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Squaring, we get 
+\begin_inset Formula $p^{2}=2q^{2}$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $p^{2}\equiv0\mod2$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula $p$
+\end_inset
+
+ must be even (i.e.
+ 
+\begin_inset Formula $\exists k,p=2k$
+\end_inset
+
+).
+ Using this fact, 
+\begin_inset Formula $4k^{2}=2q^{2}$
+\end_inset
+
+ or 
+\begin_inset Formula $2k^{2}=q^{2}$
+\end_inset
+
+.
+ That says that 
+\begin_inset Formula $q^{2}$
+\end_inset
+
+ is even, which implies that 
+\begin_inset Formula $q$
+\end_inset
+
+ is even.
+ But if 
+\begin_inset Formula $q$
+\end_inset
+
+ is even and 
+\begin_inset Formula $p$
+\end_inset
+
+ is even, then 
+\begin_inset Formula $p$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+ have a common factor 
+\begin_inset Formula $2$
+\end_inset
+
+, so they are no longer co-prime.
+ Hence we face a contradiction.
+ So, the opposite must be 
+\series bold
+True
+\series default
+, i.e.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\sqrt{2}$
+\end_inset
+
+ must be irrational
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Prove by contradiction that 
+\begin_inset Quotes eld
+\end_inset
+
+if 
+\begin_inset Formula $3n+2$
+\end_inset
+
+ is odd, then 
+\begin_inset Formula $n$
+\end_inset
+
+ is odd
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $n$
+\end_inset
+
+ be even.
+ Then 
+\begin_inset Formula $\exists k,n=2k$
+\end_inset
+
+.
+ That states 
+\begin_inset Formula $3n+2=6k+2=2(3k+1)\equiv0\mod2$
+\end_inset
+
+.
+ Then, 
+\begin_inset Formula $3n+2$
+\end_inset
+
+ must be even.
+ But 
+\begin_inset Formula $3n+2$
+\end_inset
+
+ should be odd.
+ The contradiction proves the statement.
+\end_layout
+
+\begin_layout Section
+Mathematical Induction
+\end_layout
+
+\begin_layout Standard
+Mathematical induction is a technique used in proving mathematical statements
+ (not deriving, but proving).
+\end_layout
+
+\begin_layout Subsection*
+Steps
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $P(n)$
+\end_inset
+
+ is a proposition that is requires a proof for all 
+\begin_inset Formula $n\in\mathbf{I^{+}}$
+\end_inset
+
+ or 
+\begin_inset Formula $n\in\mathbf{W}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Basis Step
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Verify 
+\begin_inset Formula $P(1)$
+\end_inset
+
+ or 
+\begin_inset Formula $P(0)$
+\end_inset
+
+ holds.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Hypothesis Step
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Assume that 
+\begin_inset Formula $P(k)$
+\end_inset
+
+ is 
+\series bold
+True
+\series default
+ for some 
+\begin_inset Formula $n=k$
+\end_inset
+
+.
+ (weak induction)
+\end_layout
+
+\begin_layout Standard
+Assume that 
+\begin_inset Formula $P(2)$
+\end_inset
+
+, 
+\begin_inset Formula $P(3)$
+\end_inset
+
+ 
+\begin_inset Formula $\dotsb$
+\end_inset
+
+ 
+\begin_inset Formula $P(k)$
+\end_inset
+
+ are 
+\series bold
+True
+\series default
+ for some 
+\begin_inset Formula $n=k$
+\end_inset
+
+.
+ (strong induction)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Inductive Step
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Verify the fact that 
+\begin_inset Formula $P(k+1)$
+\end_inset
+
+ is 
+\series bold
+True
+\series default
+ using the hypotheses.
+\end_layout
+
+\end_deeper
+\begin_layout Example
+Show by mathematical induction that
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\dotsb+\frac{1}{n(n+1)}=\frac{n}{n+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Basis Step
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $P(1)$
+\end_inset
+
+ is true because
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+\frac{1}{1\cdot2}=\frac{1}{1+1}=\frac{1}{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Hypothesis Step
+\end_layout
+
+\begin_layout Standard
+\noindent
+Let us assume that 
+\begin_inset Formula $P(k)$
+\end_inset
+
+ is 
+\series bold
+True 
+\series default
+for some 
+\begin_inset Formula $n=k$
+\end_inset
+
+.
+ So the following statement holds.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\dotsb+\frac{1}{k(k+1)}=\frac{k}{k+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Inductive Step
+\end_layout
+
+\begin_layout Standard
+\noindent
+Let us try to prove 
+\begin_inset Formula $P(k+1)$
+\end_inset
+
+ is 
+\series bold
+True
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\begin{eqnarray*}
+P(k+1):\,\,\,\frac{k+1}{k+2} & = & \frac{1}{1\cdot2}+\frac{1}{2\cdot3}+\dotsb+\frac{1}{k(k+1)}+\frac{1}{(k+1)(k+2)}\\
+ & = & \frac{k}{k+1}+\frac{1}{(k+1)(k+2)}\\
+ & = & \frac{k(k+2)}{(k+1)(k+2)}+\frac{1}{(k+1)(k+2)}\\
+ & = & \frac{k^{2}+2k+1}{(k+1)(k+2)}\\
+ & = & \frac{(k+1)^{2}}{(k+1)(k+2)}\\
+ & = & \frac{k+1}{k+2}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence 
+\begin_inset Formula $P(k+1)$
+\end_inset
+
+ holds.
+ So, by the law of mathematical induction, 
+\begin_inset Formula $P(n)$
+\end_inset
+
+ holds for all 
+\begin_inset Formula $n\in\mathbf{N}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Use mathematical induction to show that 
+\begin_inset Formula $\forall n,3|n^{3}-n$
+\end_inset
+
+ where the domain of discourse is 
+\begin_inset Formula $\mathbf{I^{+}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Basis Step
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $P(1)$
+\end_inset
+
+ holds because
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+3|1^{3}-1=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Hypothesis Step
+\end_layout
+
+\begin_layout Standard
+\noindent
+Let us assume that 
+\begin_inset Formula $\exists k,3|k^{3}-k$
+\end_inset
+
+.
+ Then, 
+\begin_inset Formula $\exists i,k^{3}-k=(k-1)k(k+1)=3i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Inductive Step
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $P(k+1)$
+\end_inset
+
+ says that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+3 & | & (k+1)^{3}-(k+1)\\
+ & = & (k+1)\{(k+1)^{2}-1\}\\
+ & = & (k+1)(k^{2}+2k)\\
+ & = & k(k+1)(k+2)\\
+ & = & k(k+1)(k-1+3)\\
+ & = & (k-1)k(k+1)+3k(k+1)\\
+ & = & 3i+3k(k+1)
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+which is 
+\series bold
+True
+\series default
+.
+ Hence, 
+\begin_inset Formula $P(k+1)$
+\end_inset
+
+ holds.
+ Therefore, by the law of mathematical induction, 
+\begin_inset Formula $P(n)$
+\end_inset
+
+ holds for 
+\begin_inset Formula $n\in\mathbf{I^{+}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Let 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+ 
+\begin_inset Formula $\dotsb$
+\end_inset
+
+ 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ 
+\begin_inset Formula $\subseteq Q$
+\end_inset
+
+ be some sets, then prove the De Morgan Law
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+(A_{1}\cup A_{2}\cup\dotsb\cup A_{n})'=A_{1}'\cap A_{2}'\cap\dotsb\cap A_{n}'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Basis Step
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula $P(1)$
+\end_inset
+
+ holds because is the basic double negation law of set theory.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Hypothesis Step
+\end_layout
+
+\begin_layout Standard
+\noindent
+Let us assume that for some 
+\begin_inset Formula $k\geq3$
+\end_inset
+
+, 
+\begin_inset Formula $P(k)$
+\end_inset
+
+ holds i.e.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Formula 
+\[
+(A_{1}\cup A_{2}\cup\dotsb\cup A_{k})'=A_{1}'\cap A_{2}'\cap\dotsb\cap A_{k}'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Inductive Step
+\end_layout
+
+\begin_layout Standard
+\noindent
+Then 
+\begin_inset Formula $P(k+1)$
+\end_inset
+
+ says that (using De Morgan Law for 
+\begin_inset Formula $n=2$
+\end_inset
+
+ which already holds)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+A_{1}'\cap A_{2}'\cap\dotsb\cap A_{k}\cap A_{k+1}' & = & (A_{1}\cup A_{2}\cup\dotsb\cup A_{k}\cup A_{k+1})'\\
+ & = & ((A_{1}\cup A_{2}\cup\dotsb\cup A_{k})\cup(A_{k+1}))'\\
+ & = & (A_{1}\cup A_{2}\cup\dotsb\cup A_{k})'\cap A_{k+1}'\\
+ & = & A_{1}'\cap A_{2}'\cap\dotsb\cap A_{k}'\cap A_{k+1}'
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+which is 
+\series bold
+True
+\series default
+.
+ Hence, by the law of mathematical induction, 
+\begin_inset Formula $P(n)$
+\end_inset
+
+ holds for all 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Recursively Defined Sequences
+\end_layout
+
+\begin_layout Standard
+These are sequences which are defined in terms of themselves.
+ For example, 
+\begin_inset Formula $a_{n}=3^{n},n\in\mathbf{W}$
+\end_inset
+
+ can be described as 
+\begin_inset Formula 
+\begin{eqnarray*}
+a_{0} & = & 1\\
+a_{n+1} & = & 3a_{n}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The proces of getting the elements using the previous elements in this fashion
+ is called recursion.
+\end_layout
+
+\begin_layout Section
+Program Correctness
+\end_layout
+
+\begin_layout Standard
+A program is said to be correct if it produces the correct output for every
+ possible input.
+ A correctness proof typically consists of 
+\begin_inset Formula $2$
+\end_inset
+
+ steps -
+\end_layout
+
+\begin_layout Itemize
+Show that if the program terminates, then a correct answer is obtained.
+\end_layout
+
+\begin_layout Itemize
+Show that the program does terminate.
+\end_layout
+
+\begin_layout Standard
+If we can prove the first step only, then the program is said to be 
+\series bold
+partially correct
+\series default
+.
+ Let there be a program with input 
+\begin_inset Formula $p$
+\end_inset
+
+ and output 
+\begin_inset Formula $q$
+\end_inset
+
+.
+ Then, a program or program segment 
+\begin_inset Formula $S$
+\end_inset
+
+ is said to be partially correct with respect to the inital assertion 
+\begin_inset Formula $p$
+\end_inset
+
+ and final assertion 
+\begin_inset Formula $q$
+\end_inset
+
+ if 
+\begin_inset Formula $p$
+\end_inset
+
+ is true for all the inputs of 
+\begin_inset Formula $S$
+\end_inset
+
+ and on termination, 
+\begin_inset Formula $q$
+\end_inset
+
+ is true for all the outputs of 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ We usually then write it as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+p & \{S\} & q
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+This is called a 
+\series bold
+Hoare Triple
+\series default
+.
+ In general,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+p & \{S_{1}\} & q\\
+p & \{S_{2}\} & q
+\end{eqnarray*}
+
+\end_inset
+
+ can be written as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+p & \{S_{1},S_{2}\} & q
+\end{eqnarray*}
+
+\end_inset
+
 
 \end_layout
 
