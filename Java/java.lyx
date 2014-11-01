@@ -95,16 +95,541 @@ Objects and Classes
 Characteristics of OOP
 \end_layout
 
+\begin_layout Subsection*
+Abstraction
+\end_layout
+
+\begin_layout Standard
+Visualizing everything as objects give us the benefit of not worrying how
+ those objects work.
+ For example, a 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Computer
+\end_layout
+
+\end_inset
+
+ can be an object that opens up, plays movies, plays music, runs games but
+ we do not care how and instead just focus on its use.
+ So, we use it to write a document or to browse the internet without worrying
+ about the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+RAM
+\end_layout
+
+\end_inset
+
+ object, 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+HardDisk
+\end_layout
+
+\end_inset
+
+ object and other complex objects and mechanism that make it up.
+ That is the essence of OOP.
+\end_layout
+
+\begin_layout Subsection*
+Three OOP Principles
+\end_layout
+
+\begin_layout Itemize
+Encapsulation
+\end_layout
+
+\begin_layout Itemize
+Inheritance
+\end_layout
+
+\begin_layout Itemize
+Polymorphism
+\end_layout
+
+\begin_layout Standard
+Let us describe these in detail.
+\end_layout
+
+\begin_layout Subsection*
+Encapsulation
+\end_layout
+
+\begin_layout Standard
+Encapsulation is a mechanism that binds code and data, and keeps it safe
+ from outside misuse and interference.
+ It allows the user to affect the object in certain defined ways, thus preventin
+g misuse and bad functioning.
+ For example, the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Computer
+\end_layout
+
+\end_inset
+
+ object may be accessed by 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+playMovie()
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+runGame()
+\end_layout
+
+\end_inset
+
+, but we cannot access the movie pixels that are stored inside the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Computer
+\end_layout
+
+\end_inset
+
+ or access the auditory details of the game.
+ We can just play the game or the movie.
+ It is the only way we can access the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Computer
+\end_layout
+
+\end_inset
+
+ (here).
+ Encapsulation hides the complexity of an object and its methods.
+\end_layout
+
+\begin_layout Subsection*
+Inheritance
+\end_layout
+
+\begin_layout Standard
+Inheritance is the mechanism by which an object inherits the properties
+ of another.
+ For example, 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Laptop
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+PC
+\end_layout
+
+\end_inset
+
+ could be objects that inherit from 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Computer
+\end_layout
+
+\end_inset
+
+.
+ An object has access to all non overridden attributes of all its ancestors.
+ Objects that inherit are called children with respect to the objects they
+ inherit from, called parents.
+\end_layout
+
+\begin_layout Subsection*
+Polymorphism
+\end_layout
+
+\begin_layout Standard
+Polymorphism is a feature that allows for an interface to be used for a
+ general set of purposes.
+ For example, we could need a 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Queue
+\end_layout
+
+\end_inset
+
+ object, but at different times they might be working with different types
+ of values.
+ Then we can define an interface 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Queue
+\end_layout
+
+\end_inset
+
+ which should be implemented by all objects that serve that idea.
+ The basic motive of polymorphism is 
+\begin_inset Quotes eld
+\end_inset
+
+one interface, multiple methods
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Difference between OOP and Procedure Oriented Programming
+\end_layout
+
+\begin_layout Standard
+A program can be constructed in two ways.
+ The first way is the 
+\series bold
+procedure oriented
+\series default
+ way.
+ Here programs are written down as a sequence of steps.
+ It can be thought of as 
+\begin_inset Quotes eld
+\end_inset
+
+code acting on data
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Procedural programming languages include C, BASIC etc.
+ The problem arises when the code becomes large.
+ It is then, difficult to manage.
+\end_layout
+
+\begin_layout Standard
+The second way follows the idea that 
+\begin_inset Quotes eld
+\end_inset
+
+everything is an object
+\begin_inset Quotes erd
+\end_inset
+
+.
+ It is called as 
+\series bold
+object oriented
+\series default
+ programming.
+ Here the program is made around objects (data) and interfaces.
+ So, it can be thought of as 
+\begin_inset Quotes eld
+\end_inset
+
+data controlling access to code
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Section
 Introduction to Java Programming
 \end_layout
 
+\begin_layout Standard
+A short simple Java program can be written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+// Filename : demo1.java
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+class Example {
+\end_layout
+
+\begin_layout Plain Layout
+
+	public static void main(String[] args) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		System.out.println("Hello World!");
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On Linux or Windows, this can be compiled (after installing JDK) by running
+ 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+javac demo1.java
+\end_layout
+
+\end_inset
+
+.
+ This would create a file 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Example.class
+\end_layout
+
+\end_inset
+
+, which can be run using 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+java Example
+\end_layout
+
+\end_inset
+
+.
+ This prints
+ 
+\lang english
+
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Hello World!
+\end_layout
+
+\end_inset
+
+ on a new line.
+\end_layout
+
 \begin_layout Section
 Features of Java
+\end_layout
+
+\begin_layout Subsection*
+Simplicity
+\end_layout
+
+\begin_layout Standard
+Java inherits its syntax from C/C++, and it is not difficult to learn, if
+ you have a background of C/C++.
+ Moreover, it is designed to be easy and effective so that a newcomer also
+ finds it simple.
+\end_layout
+
+\begin_layout Subsection*
+Object Oriented
+\end_layout
+
+\begin_layout Standard
+Because Java was a new language and it started off with its own implementation,
+ it didn't need to comply to any language's features.
+ The object model in Java is quite simple, where as Java also contains primitive
+ types, as a faster alternative.
+\end_layout
+
+\begin_layout Subsection*
+Robustness
+\end_layout
+
+\begin_layout Standard
+In Java, it is easy to track down bugs.
+ This is partly because the reason for most of the bugs, i.e.
+ manual memory allocation has been removed.
+ JVM handles all the memory allocation and garbage collection.
+ Even more, Java provides an object oriented exception mechanism, so the
+ runtime and compile-time errors can be well traced back.
+\end_layout
+
+\begin_layout Subsection*
+Multithreading
+\end_layout
+
+\begin_layout Standard
+Java allows us to create segments of code that run concurrently, allowing
+ us to make full use of processor potential if needed.
+\end_layout
+
+\begin_layout Subsection*
+Portability
+\end_layout
+
+\begin_layout Standard
+Java code is very portable.
+ Any Java code will work on all platforms, assuming the JVM for that platform
+ is installed on it.
+ So, Java is widely used as the programming language for electronic devices,
+ computers, ATMs, music players, TVs, smart homes and much more.
+ The goal of Java is 
+\begin_inset Quotes eld
+\end_inset
+
+write once, use anywhere
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Interpreted and High Performance
+\end_layout
+
+\begin_layout Standard
+Java code is compiled into Java Byte Code, which can be run using the JVM.
+ Even more, an JIT (just in time compiler) allows for Java code to be compiled
+ into machine code, providing high performance on native systems.
+\end_layout
+
+\begin_layout Subsection*
+Distributed, Works on a Network
+\end_layout
+
+\begin_layout Standard
+Java is designed for a distributed network.
+ It can handle TCP/IP protocols and URL handling is pretty simple in Java.
+ Java supports Remote Method Invocation (RMI), i.e.
+ it allows to invoke methods across a network.
+\end_layout
+
+\begin_layout Subsection*
+Dynamic
+\end_layout
+
+\begin_layout Standard
+All code in Java is dynamically interlinked because Java Byte Code carries
+ a little amount of runtime type information which is used to resolve access
+ to objects at runtime.
+ So, on a running system Java performs excellently because it allows for
+ dynamic update of application code.
 \end_layout
 
 \begin_layout Section
