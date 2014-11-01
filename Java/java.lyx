@@ -1194,10 +1194,316 @@ Applets
 Java Applications versus Java Applets
 \end_layout
 
+\begin_layout Subsection*
+What are Applets?
+\end_layout
+
+\begin_layout Standard
+Applets are small applications that can be transferred via the Internet,
+ installed automatically and run as a segment of a webpage.
+ Thus, after reaching a client, it has limited access to resources, and
+ therefore, there is no risk of viruses or security breaches.
+\end_layout
+
+\begin_layout Subsection*
+A Simple Applet
+\end_layout
+
+\begin_layout Standard
+A simple applet can be created as follows.
+ Just import 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+java.awt.*
+\end_layout
+
+\end_inset
+
+ (AWT stands for Abstract Window Toolkit).
+ Applets interact with the user using AWT, and not the traditional I/O classes.
+ Basic functionality for applets can be found out in 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+java.applet.*
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+import java.awt.*;
+\end_layout
+
+\begin_layout Plain Layout
+
+import java.applet.*;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public class ASimpleApplet extends Applet {
+\end_layout
+
+\begin_layout Plain Layout
+
+	public void paint(Graphics g) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		g.drawString("A very basic applet", 20, 20);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To run this applet, you need either
+\end_layout
+
+\begin_layout Itemize
+a Java compatible web browser or,
+\end_layout
+
+\begin_layout Itemize
+an Applet Viewer
+\end_layout
+
+\begin_layout Subsection*
+Differences between Applets and Applications
+\end_layout
+
+\begin_layout Enumerate
+An 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Applet
+\end_layout
+
+\end_inset
+
+ class doesn't have a 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+main
+\end_layout
+
+\end_inset
+
+ method, but an application has a 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+main
+\end_layout
+
+\end_inset
+
+ method.
+\end_layout
+
+\begin_layout Enumerate
+Applets are made to run with the help of a web browser or applet viewer,
+ where as, applications are generally to be run on a console or as an independen
+t process on a computer.
+\end_layout
+
+\begin_layout Enumerate
+Applets work with limited resources on a foreign client, and applications
+ have access to all the generally available resources on the system it runs.
+\end_layout
+
 \begin_layout Section
 Applet Life Cycle
 \end_layout
 
+\begin_layout Standard
+There are four methods in an 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Applet
+\end_layout
+
+\end_inset
+
+ class which define its life cycle.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+init()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+This method is called after the 
+\family typewriter
+<applet> 
+\family default
+tag has been called in the document.
+ It is used for initialization purposes.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+start()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+This method is called by the browser or applet viewer after 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+init()
+\end_layout
+
+\end_inset
+
+ has been called, or whenever the user revisits the applet.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+stop()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+It is called whenever the user leaves the applet, i.e.
+ when another page is visited in the browser or when the applet viewer is
+ removed from view.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+destroy()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+It is called if the browser or applet viewer shuts down normally.
+ It is essential that all the resources used by the applet are restored
+ before the applet is destroyed.
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Working with Applets
 \end_layout
