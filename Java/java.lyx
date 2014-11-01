@@ -3,6 +3,14 @@
 \begin_document
 \begin_header
 \textclass book
+\begin_preamble
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+\fancyhead{}% Clear all headers
+%\fancyfoot{}% Clear all footers
+\renewcommand{\headrulewidth}{0pt}% Remove header rule
+%\renewcommand{\footrulewidth}{0pt}% Remove footer rule
+\pagestyle{fancy}% Set page style to "fancy"
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -61,6 +69,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\listings_params "basicstyle={\ttfamily},columns=fullflexible,keywordstyle={\color{blue}}"
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -218,8 +227,905 @@ Multithreading
 Overview of Threading
 \end_layout
 
+\begin_layout Subsection*
+What is a Thread?
+\end_layout
+
+\begin_layout Standard
+Java provides built-in support for multithreading.
+ Basically, a multithreaded program has two or more segments that can run
+ together or concurrently and each such part is independently called a thread.
+\end_layout
+
+\begin_layout Quote
+\begin_inset Quotes eld
+\end_inset
+
+Thread is the smallest unit of code that can be dispatched by the scheduler
+ in a program, in a multitasking environment
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Types of Multitasking
+\end_layout
+
+\begin_layout Itemize
+Process based multitasking allows the PC to run simultaneously mutiple processes
+ or, individual programs.
+\end_layout
+
+\begin_layout Itemize
+Thread based multitasking allows a program to run concurrently two or more
+ segments or threads in it, each of which execute differently.
+\end_layout
+
+\begin_layout Subsection*
+Benefits
+\end_layout
+
+\begin_layout Standard
+Due to multithreading, we can write efficient programs that make complete
+ use of the processor power available.
+\end_layout
+
 \begin_layout Section
 Creating Threads
+\end_layout
+
+\begin_layout Standard
+There are two ways to create a thread - 
+\end_layout
+
+\begin_layout Itemize
+implement the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+Runnable
+\end_layout
+
+\end_inset
+
+ interface
+\end_layout
+
+\begin_layout Itemize
+extend the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+Thread
+\end_layout
+
+\end_inset
+
+ class
+\end_layout
+
+\begin_layout Subsection*
+Thread Creation by implementing 
+\family typewriter
+Runnable 
+\family default
+interface
+\end_layout
+
+\begin_layout Standard
+Just implement the function
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+public void run();
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+run()
+\end_layout
+
+\end_inset
+
+ returns, the thread stops.
+ Basically first we need to create a 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+Thread
+\end_layout
+
+\end_inset
+
+
+\family typewriter
+ 
+\family default
+object (say 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+myThread
+\end_layout
+
+\end_inset
+
+) inside the class and in the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+run()
+\end_layout
+
+\end_inset
+
+ function, we just call the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+start()
+\end_layout
+
+\end_inset
+
+ method of that thread.
+ A simple way to create thread is
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+new Thread(Runnable threadObj, String threadName);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An example is
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class ThreadClass implements Runnable {
+\end_layout
+
+\begin_layout Plain Layout
+
+	Thread t;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	ThreadClass() {
+\end_layout
+
+\begin_layout Plain Layout
+
+		t = new Thread(this, "Example Thread");
+\end_layout
+
+\begin_layout Plain Layout
+
+		t.start();
+\end_layout
+
+\begin_layout Plain Layout
+
+		// starts the thread by calling run()
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	public void run() {
+\end_layout
+
+\begin_layout Plain Layout
+
+		// might throw an InterruptedException
+\end_layout
+
+\begin_layout Plain Layout
+
+		try {
+\end_layout
+
+\begin_layout Plain Layout
+
+			for (int i = 5; i > 0; ++i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+				System.out.println("ThreadClass says : "+i);
+\end_layout
+
+\begin_layout Plain Layout
+
+				Thread.sleep(500);
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+		} catch (InterruptedException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			System.out.println("ThreadClass interrupted.");
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+		System.out.println("ThreadClass exiting.");
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Demo {
+\end_layout
+
+\begin_layout Plain Layout
+
+	public static void main(String[] args) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		ThreadClass tc = new ThreadClass();
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+		try {
+\end_layout
+
+\begin_layout Plain Layout
+
+			for (int i = 5; i > 0; ++i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+				System.out.println("main says : "+i);
+\end_layout
+
+\begin_layout Plain Layout
+
+				Thread.sleep(1000);
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+		} catch (InterruptedException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			System.out.println("main interrupted.");
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+		System.out.println("main exiting.");
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}		
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When we run 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+Demo
+\end_layout
+
+\end_inset
+
+ class, then first an instance of 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+ThreadClass
+\end_layout
+
+\end_inset
+
+ is created, and then for 
+\begin_inset Formula $5$
+\end_inset
+
+ times, the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+main
+\end_layout
+
+\end_inset
+
+ thread sleeps (done via 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+sleep()
+\end_layout
+
+\end_inset
+
+).
+ Before sleeping, it outputs a number corresponding to the time the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+main
+\end_layout
+
+\end_inset
+
+ thread is run.
+ But when it sleeps, the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+ThreadClass
+\end_layout
+
+\end_inset
+
+ instance 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+tc
+\end_layout
+
+\end_inset
+
+ runs in parallel, and it also pauses, according to its routine.
+ So we get a mix of outputs from both 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+main
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+tc
+\end_layout
+
+\end_inset
+
+.
+ The sleep command's syntax is
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+static void sleep(long milliseconds) throws InterruptedException
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+static void sleep(long milliseconds, int nanoseconds) throws InterruptedExceptio
+n
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Thread Creation by extending 
+\family typewriter
+Thread
+\end_layout
+
+\begin_layout Standard
+Here we extend the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+Thread
+\end_layout
+
+\end_inset
+
+ object and override its 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+run()
+\end_layout
+
+\end_inset
+
+ function.
+ Just like the previous way, it should also call 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+start()
+\end_layout
+
+\end_inset
+
+ to begin execution.
+ An example is
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+class ThreadClass2 extends Thread {
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	ThreadClass2() {
+\end_layout
+
+\begin_layout Plain Layout
+
+		super("Example Thread");
+\end_layout
+
+\begin_layout Plain Layout
+
+		t.start();
+\end_layout
+
+\begin_layout Plain Layout
+
+		// starts the thread by calling run()
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	public void run() {
+\end_layout
+
+\begin_layout Plain Layout
+
+		// might throw an InterruptedException
+\end_layout
+
+\begin_layout Plain Layout
+
+		try {
+\end_layout
+
+\begin_layout Plain Layout
+
+			for (int i = 5; i > 0; ++i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+				System.out.println("ThreadClass says : "+i);
+\end_layout
+
+\begin_layout Plain Layout
+
+				Thread.sleep(500);
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+		} catch (InterruptedException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			System.out.println("ThreadClass interrupted.");
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+		System.out.println("ThreadClass exiting.");
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class Demo2 {
+\end_layout
+
+\begin_layout Plain Layout
+
+	public static void main(String[] args) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		ThreadClass2 tc = new ThreadClass2();
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+		try {
+\end_layout
+
+\begin_layout Plain Layout
+
+			for (int i = 5; i > 0; ++i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+				System.out.println("main says : "+i);
+\end_layout
+
+\begin_layout Plain Layout
+
+				Thread.sleep(1000);
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+		} catch (InterruptedException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			System.out.println("main interrupted.");
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+		System.out.println("main exiting.");
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}		
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This also pretty much works in the same way as the previous, where we implemente
+d 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Runnable
+\end_layout
+
+\end_inset
+
+.
+ This time we need to compile and run 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Demo2
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
