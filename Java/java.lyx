@@ -1,0 +1,376 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Object Oriented Programming Using Java
+\end_layout
+
+\begin_layout Chapter
+Introduction to OOP
+\end_layout
+
+\begin_layout Section
+Objects and Classes
+\end_layout
+
+\begin_layout Section
+Characteristics of OOP
+\end_layout
+
+\begin_layout Section
+Difference between OOP and Procedure Oriented Programming
+\end_layout
+
+\begin_layout Section
+Introduction to Java Programming
+\end_layout
+
+\begin_layout Section
+Features of Java
+\end_layout
+
+\begin_layout Section
+Applications and Applets
+\end_layout
+
+\begin_layout Section
+JDK
+\end_layout
+
+\begin_layout Section
+Source File Structure
+\end_layout
+
+\begin_layout Chapter
+Java Language Fundamentals
+\end_layout
+
+\begin_layout Section
+Building Blocks of Java
+\end_layout
+
+\begin_layout Section
+Data Types
+\end_layout
+
+\begin_layout Section
+Variable Declarations
+\end_layout
+
+\begin_layout Section
+Wrapper Classes
+\end_layout
+
+\begin_layout Section
+Operators and Assignment
+\end_layout
+
+\begin_layout Section
+Control Structures
+\end_layout
+
+\begin_layout Section
+Arrays
+\end_layout
+
+\begin_layout Section
+Strings
+\end_layout
+
+\begin_layout Section
+
+\family typewriter
+StringBuffer
+\family default
+ Class
+\end_layout
+
+\begin_layout Chapter
+Java as an OOP Language
+\end_layout
+
+\begin_layout Section
+Defining Classes
+\end_layout
+
+\begin_layout Section
+Modifiers
+\end_layout
+
+\begin_layout Section
+Packages
+\end_layout
+
+\begin_layout Section
+Interfaces
+\end_layout
+
+\begin_layout Section
+Exception Handling
+\end_layout
+
+\begin_layout Section
+Exception Hierarchy
+\end_layout
+
+\begin_layout Section
+Constructors and Methods of 
+\family typewriter
+Throwable
+\family default
+ Class
+\end_layout
+
+\begin_layout Section
+Unchecked and Checked Exceptions
+\end_layout
+
+\begin_layout Section
+Handling Exceptions in Java
+\end_layout
+
+\begin_layout Section
+Exceptions and Inheritance
+\end_layout
+
+\begin_layout Section
+Throwing User Defined Exceptions
+\end_layout
+
+\begin_layout Section
+Redirecting and Rethrowing Exceptions
+\end_layout
+
+\begin_layout Chapter
+Multithreading
+\end_layout
+
+\begin_layout Section
+Overview of Threading
+\end_layout
+
+\begin_layout Section
+Creating Threads
+\end_layout
+
+\begin_layout Section
+Thread Life Cycle
+\end_layout
+
+\begin_layout Section
+Thread Priorities and Thread Scheduling
+\end_layout
+
+\begin_layout Section
+Thread Synchronization
+\end_layout
+
+\begin_layout Section
+Daemon Threads
+\end_layout
+
+\begin_layout Section
+Thread Groups
+\end_layout
+
+\begin_layout Section
+Communication of Threads
+\end_layout
+
+\begin_layout Chapter
+Files and I/O Streams
+\end_layout
+
+\begin_layout Section
+Java I/O
+\end_layout
+
+\begin_layout Section
+File Streams
+\end_layout
+
+\begin_layout Section
+
+\family typewriter
+FileInputStream
+\family default
+ and 
+\family typewriter
+FileOutputStream
+\end_layout
+
+\begin_layout Section
+Filter Streams
+\end_layout
+
+\begin_layout Section
+Random Access Files
+\end_layout
+
+\begin_layout Section
+Serialization
+\end_layout
+
+\begin_layout Chapter
+Applets
+\end_layout
+
+\begin_layout Section
+Java Applications versus Java Applets
+\end_layout
+
+\begin_layout Section
+Applet Life Cycle
+\end_layout
+
+\begin_layout Section
+Working with Applets
+\end_layout
+
+\begin_layout Section
+The HTML Applet Tag
+\end_layout
+
+\begin_layout Section
+
+\family typewriter
+java.Applet
+\family default
+ Package
+\end_layout
+
+\begin_layout Chapter
+AWT
+\end_layout
+
+\begin_layout Section
+Basic Classes in AWT
+\end_layout
+
+\begin_layout Section
+Drawing with 
+\family typewriter
+Graphics
+\family default
+ Class
+\end_layout
+
+\begin_layout Section
+Class Hierarchy of AWT
+\end_layout
+
+\begin_layout Section
+Event Handling
+\end_layout
+
+\begin_layout Section
+Adapter Classes
+\end_layout
+
+\begin_layout Section
+AWT Controls
+\end_layout
+
+\begin_layout Section
+Layout Managers
+\end_layout
+
+\begin_layout Section
+
+\family typewriter
+Swing
+\end_layout
+
+\begin_layout Section
+Packages in 
+\family typewriter
+Swing
+\end_layout
+
+\begin_layout Section
+Hierarchy of 
+\family typewriter
+Swing 
+\family default
+Classes
+\end_layout
+
+\begin_layout Section
+Advanced Layout Managers
+\end_layout
+
+\begin_layout Section
+Additional Swing Components
+\end_layout
+
+\end_body
+\end_document
