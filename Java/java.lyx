@@ -91,6 +91,289 @@ Introduction to OOP
 Objects and Classes
 \end_layout
 
+\begin_layout Subsection*
+Objects
+\end_layout
+
+\begin_layout Standard
+Objects have states and methods.
+ For example, a 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Computer
+\end_layout
+
+\end_inset
+
+ object can have 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+Computer.Power = "ON"
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Computer.Power = "OFF"
+\end_layout
+
+\end_inset
+
+.
+ It could also have methods like 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+turnOnComputer()
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+turnOffComputer()
+\end_layout
+
+\end_inset
+
+.
+ Basically, the states of an object can be altered by its methods.
+ And the states of the objects are containers (or variables) with different
+ values.
+ These containers are called attributes.
+\end_layout
+
+\begin_layout Standard
+An object is an instance of a class.
+\end_layout
+
+\begin_layout Subsection*
+Classes
+\end_layout
+
+\begin_layout Standard
+Classes are the blueprints for objects.
+ For example, one could define in Java a class for 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Computer
+\end_layout
+
+\end_inset
+
+ like
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,showstringspaces=false,tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+public class Computer {
+\end_layout
+
+\begin_layout Plain Layout
+
+	String Power;
+\end_layout
+
+\begin_layout Plain Layout
+
+	void turnOnComputer() {...}
+\end_layout
+
+\begin_layout Plain Layout
+
+	void turnOffComputer() {...}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Classes can have three different types of variables - 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Local
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Local variables are local to the methods.
+ Once you leave a method, you cannot access them.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Instance
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Instance variables are created when an object is created using the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+new
+\end_layout
+
+\end_inset
+
+ keyword.
+ JVM then allocates memory for all the 
+\begin_inset Quotes eld
+\end_inset
+
+global
+\begin_inset Quotes erd
+\end_inset
+
+ variables inside the class, and these variables are called instance variables.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Class
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Class variables are declared within a class using 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+static
+\end_layout
+
+\end_inset
+
+ keyword.
+ They can be accessed without creating an object of the class.
+ For example if instead of 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+String Power
+\end_layout
+
+\end_inset
+
+ we had 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+static String Power
+\end_layout
+
+\end_inset
+
+, then 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Power
+\end_layout
+
+\end_inset
+
+ could be accessed as 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Computer.Power
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Characteristics of OOP
 \end_layout
@@ -510,10 +793,7 @@ java Example
 \end_inset
 
 .
- This prints
- 
-\lang english
-
+ This prints 
 \begin_inset listings
 lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
 inline true
@@ -634,14 +914,323 @@ All code in Java is dynamically interlinked because Java Byte Code carries
 
 \begin_layout Section
 Applications and Applets
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+see section 6.1
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection*
+What are Applications?
+\end_layout
+
+\begin_layout Standard
+Java applications include programs made using Java, which are either meant
+ to run on consoles or as a full blown desktop application or on embedded
+ systems.
+\end_layout
+
+\begin_layout Subsection*
+What are Applets?
+\end_layout
+
+\begin_layout Standard
+Applets are small applications that can be transferred via the Internet,
+ installed automatically and run as a segment of a webpage.
+ Thus, after reaching a client, it has limited access to resources, and
+ therefore, there is no risk of viruses or security breaches.
+\end_layout
+
+\begin_layout Subsection*
+Software Needed to run Java Applets
+\end_layout
+
+\begin_layout Standard
+To run an applet, you need either
+\end_layout
+
+\begin_layout Itemize
+a Java compatible web browser or,
+\end_layout
+
+\begin_layout Itemize
+an Applet Viewer
+\end_layout
+
+\begin_layout Subsection*
+Differences between Applets and Applications
+\end_layout
+
+\begin_layout Enumerate
+An 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Applet
+\end_layout
+
+\end_inset
+
+ class doesn't have a 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+main
+\end_layout
+
+\end_inset
+
+ method, but an application has a 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+main
+\end_layout
+
+\end_inset
+
+ method.
+\end_layout
+
+\begin_layout Enumerate
+Applets are made to run with the help of a web browser or applet viewer,
+ where as, applications are generally to be run on a console or as an independen
+t process on a computer.
+\end_layout
+
+\begin_layout Enumerate
+Applets work with limited resources on a foreign client, and applications
+ have access to all the generally available resources on the system it runs.
 \end_layout
 
 \begin_layout Section
 JDK
 \end_layout
 
+\begin_layout Standard
+JDK stands for Java Developer's Kit.
+ It is any implementation of Java Standard Edition (SE), Micro Edition (ME)
+ or Enterprise Edition (EE) released by Oracle.
+ OpenJDK is a JDK which is released as free software.
+ The latest version is OpenJDK 8.
+ However, we shall be using OpenJDK 7.
+\end_layout
+
+\begin_layout Subsection*
+Features in OpenJDK 7
+\end_layout
+
+\begin_layout Standard
+OpenJDK 7 includes improvements in the Java runtime system, with library
+ and language additions.
+ The language features were developed under the name 
+\emph on
+Project Coin
+\emph default
+.
+ The new language features are
+\end_layout
+
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+switch
+\end_layout
+
+\end_inset
+
+ can be controlled by 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+String
+\end_layout
+
+\end_inset
+
+ cases.
+\end_layout
+
+\begin_layout Itemize
+Binary 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+int
+\end_layout
+
+\end_inset
+
+ is now allowed.
+\end_layout
+
+\begin_layout Itemize
+Numeric literals can have underscores.
+\end_layout
+
+\begin_layout Itemize
+New 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+try
+\end_layout
+
+\end_inset
+
+ statement called try-with-resources has been introduced.
+\end_layout
+
+\begin_layout Itemize
+Better 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+Exception
+\end_layout
+
+\end_inset
+
+ handling through multi-
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+catch
+\end_layout
+
+\end_inset
+
+ statements and better type checking.
+\end_layout
+
+\begin_layout Standard
+Additions to the Java API are
+\end_layout
+
+\begin_layout Itemize
+NIO (or New I/O)
+\end_layout
+
+\begin_layout Itemize
+Fork/Join Framework for parallel programming
+\end_layout
+
+\begin_layout Standard
+Noticeably, the Fork/Join Framework had made parallel programming easy by
+ simplifying the creation and using of threads, and making multiple processor
+ use automatic.
+\end_layout
+
 \begin_layout Section
 Source File Structure
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://etutorials.org/Misc/programmers+guide+java+certification/Chapter+2.+Languag
+e+Fundamentals/2.5+Java+Source+File+Structure/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In general, any Java Source file must contain the following in order -
+\end_layout
+
+\begin_layout Itemize
+optionally, a 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+package
+\end_layout
+
+\end_inset
+
+ declaration
+\end_layout
+
+\begin_layout Itemize
+zero or more 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+import
+\end_layout
+
+\end_inset
+
+ statements
+\end_layout
+
+\begin_layout Itemize
+classes and interfaces, in the order of their hierarchy, where classes include
+ methods and variable type declarations.
 \end_layout
 
 \begin_layout Chapter
