@@ -1239,10 +1239,603 @@ Java Language Fundamentals
 
 \begin_layout Section
 Building Blocks of Java
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://www.cs.fsu.edu/~myers/cgs3416/notes/basics.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Components of a Java Program
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+statements
+\series default
+, i.e.
+ instructions (generally in single lines) ending in 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+blocks
+\series default
+, i.e.
+ code fragments that are enclosed in curly braces 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+{...}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+classes
+\series default
+ and respective 
+\series bold
+methods
+\series default
+, of which the 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+main(String[] args)
+\end_layout
+
+\end_inset
+
+ is the must-implement method for the class that runs through the console.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+interfaces
+\series default
+, which require any class implementing them to implement some methods
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+abstract classes
+\series default
+, which have some implemented methods and some not implemented methods
+\end_layout
+
+\begin_layout Subsection*
+More on Statements
+\end_layout
+
+\begin_layout Standard
+Statements in Java are made up of reserved words, identifiers (names of
+ classes, methods etc.), literals, operators and function calls.
+ Optionally, comments follow a line.
 \end_layout
 
 \begin_layout Section
 Data Types
+\end_layout
+
+\begin_layout Subsection*
+Primitive Data Types
+\end_layout
+
+\begin_layout Standard
+While Java follows the convention that 
+\begin_inset Quotes eld
+\end_inset
+
+everything is an object
+\begin_inset Quotes erd
+\end_inset
+
+, there are some data types in Java called primitive data types.
+ These are intended for faster computing, and these are not objects.
+ These are 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+byte
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+short
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+int
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+long
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+char
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+float
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+double
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+boolean
+\end_layout
+
+\end_inset
+
+.
+ These can be put in four groups
+\end_layout
+
+\begin_layout Enumerate
+Integers
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+They include 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+byte
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+short
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+int
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+long
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Floating point numbers
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+They include 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+float
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+double
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Characters
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+This includes 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+char
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Boolean
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+This includes the type 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+boolean
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+
+\family typewriter
+byte
+\end_layout
+
+\begin_layout Standard
+Signed 
+\begin_inset Formula $8$
+\end_inset
+
+ bit type, range 
+\begin_inset Formula $-2^{7}$
+\end_inset
+
+ to 
+\begin_inset Formula $2^{7}-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+
+\family typewriter
+short
+\end_layout
+
+\begin_layout Standard
+Signed 
+\begin_inset Formula $16$
+\end_inset
+
+ bit type, range 
+\begin_inset Formula $-2^{15}$
+\end_inset
+
+ to 
+\begin_inset Formula $2^{15}-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+
+\family typewriter
+int
+\end_layout
+
+\begin_layout Standard
+Signed 
+\begin_inset Formula $32$
+\end_inset
+
+ bit type, range 
+\begin_inset Formula $-2^{31}$
+\end_inset
+
+ to 
+\begin_inset Formula $2^{31}-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+
+\family typewriter
+long
+\end_layout
+
+\begin_layout Standard
+Signed 
+\begin_inset Formula $64$
+\end_inset
+
+ bit type, range 
+\begin_inset Formula $-2^{63}$
+\end_inset
+
+ to 
+\begin_inset Formula $2^{63}-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+
+\family typewriter
+float
+\end_layout
+
+\begin_layout Standard
+Single Precision value of 
+\begin_inset Formula $32$
+\end_inset
+
+ bits, approximate range 
+\family typewriter
+1.4e-45
+\family default
+ to 
+\family typewriter
+3.4e+38
+\family default
+.
+\end_layout
+
+\begin_layout Subsection*
+
+\family typewriter
+double
+\end_layout
+
+\begin_layout Standard
+Double Precision value of 
+\begin_inset Formula $64$
+\end_inset
+
+ bits, approximate range 
+\family typewriter
+4.9e-324
+\family default
+ to 
+\family typewriter
+1.8e+308
+\family default
+.
+\end_layout
+
+\begin_layout Subsection*
+
+\family typewriter
+char
+\end_layout
+
+\begin_layout Standard
+It is the data type used to store characters.
+ In Java, because Unicode is used to represent characters therefore the
+ range of 
+\family typewriter
+char 
+\family default
+in Java is 
+\family typewriter
+0 to 65536
+\family default
+ (
+\begin_inset Formula $16$
+\end_inset
+
+ bits).
+\end_layout
+
+\begin_layout Subsection*
+
+\family typewriter
+boolean
+\end_layout
+
+\begin_layout Standard
+Holds either a 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+true
+\end_layout
+
+\end_inset
+
+ or 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily},breaklines=true,keywordstyle={\color{blue}},language=Java,tabsize=4"
+inline true
+status open
+
+\begin_layout Plain Layout
+\noindent
+
+false
+\end_layout
+
+\end_inset
+
+ value (
+\begin_inset Formula $1$
+\end_inset
+
+ bit).
 \end_layout
 
 \begin_layout Section
